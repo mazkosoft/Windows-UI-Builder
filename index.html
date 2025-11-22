@@ -1,0 +1,2827 @@
+<head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjA5ZmNiMTMxOGNkZGNmOWU4YjczZjZhMzM3ZTk2ZTIwNjJmMjEwZGIiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMDM1Njk4NjIzMDExMTYxNDYyNyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiI1ZTZlZWRkMzE4N2YtV2luOTVCdWlsZGVyLmpzeC02MzcifSwiZXhwIjoxNzYzODM0NDUzLCJpYXQiOjE3NjM4MzA4NTMsImFsZyI6IlJTMjU2In0.JoJVCT2zEVNYv4wwYLU2VBJQ_ZAnWmzhfSnkEMP_yBmgVyUA9s-1PQOR2p2ZB-cTdBkXgSD893VeV5KbwiAs60nnjz7MVxw633FvuzdcmGboL0aFrk88WhQ9_THi0j5oaS-NmoKAnhxRgkt14Ba5qBVI7gd7VcOBjFU98CfpP_bf74iyLs5vZrBoV7gnywciUCCvvJ13yb1GboZQtm1S2_5D9HD-4-JnGZFAFVYpHOUlctLAL8-QW89yPijWGG3nvL10ItjcvIexFmxotM9ly_QABmgorM5_39fzHmOzaXa_sdrAptbK6dYHaFil48uovhp95SMjF1V9eqeTp0XZWQ","5e6eedd3187f-Win95Builder.jsx-637")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-2.5-flash-image-preview","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+        <meta charset="utf-8">
+        <style>
+            .error-boundary {
+                border: 2px dashed rgba(255, 0, 0, 0.3);
+                position: relative;
+            }
+            .error-boundary::after {
+                content: "⚠️";
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: rgba(255, 0, 0, 0.1);
+                color: red;
+                font-size: 14px;
+                padding: 2px 6px;
+                border-radius: 0 0 0 4px;
+                pointer-events: none;
+            }
+            .loading-spinner {
+                @apply flex items-center justify-center;
+                @apply min-h-[200px];
+                @apply bg-gradient-to-br from-white/5 to-white/10;
+                @apply rounded-xl;
+                @apply backdrop-blur-sm;
+            }
+            .loading-spinner::after {
+                content: '';
+                @apply w-12 h-12;
+                @apply border-4 border-primary/20;
+                @apply border-t-primary;
+                @apply rounded-full;
+                @apply animate-spin;
+                @apply shadow-lg;
+            }
+
+            /* Base text and background colors for all elements */
+            body {
+                @apply bg-background text-foreground;
+            }
+
+            /* Form elements styling */
+            input, textarea, select {
+                @apply bg-background text-foreground border-input;
+                @apply placeholder:text-muted-foreground;
+                @apply focus:outline-none focus:ring-2 focus:ring-ring;
+            }
+
+            /* Handle filled state */
+            input:not(:placeholder-shown),
+            textarea:not(:placeholder-shown),
+            select:not(:placeholder-shown) {
+                @apply bg-background;
+            }
+
+            /* Ensure proper contrast in both modes */
+            .dark input, .dark textarea, .dark select {
+                @apply bg-background/95;
+            }
+
+            input, textarea, select {
+                @apply bg-background/95;
+            }
+
+            /* Handle disabled state */
+            input:disabled,
+            textarea:disabled,
+            select:disabled {
+                @apply opacity-50 cursor-not-allowed;
+            }
+
+            /* Button styling */
+            button {
+                @apply bg-primary text-primary-foreground hover:bg-primary/90;
+                @apply disabled:opacity-50 disabled:cursor-not-allowed;
+                @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+            }
+
+            /* Secondary button variant */
+            button.secondary {
+                @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+            }
+
+            /* Card styling */
+            .card {
+                @apply bg-card text-card-foreground;
+                @apply border border-border;
+                @apply rounded-lg shadow-sm;
+            }
+
+            /* Popover and dropdown styling */
+            .popover {
+                @apply bg-popover text-popover-foreground;
+                @apply border border-border;
+                @apply shadow-md rounded-md;
+            }
+
+            /* Link styling */
+            a {
+                @apply text-primary hover:text-primary/80;
+                @apply focus:outline-none focus:ring-2 focus:ring-ring;
+            }
+
+            /* Muted text */
+            .text-muted {
+                @apply text-muted-foreground;
+            }
+
+            /* Accent backgrounds */
+            .bg-accent {
+                @apply bg-accent text-accent-foreground;
+            }
+
+            /* Destructive elements */
+            .destructive {
+                @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+            }
+
+            /* Code blocks and pre elements */
+            pre, code {
+                @apply bg-muted text-muted-foreground;
+                @apply rounded px-[0.3em] py-[0.2em];
+            }
+
+            /* Table styling */
+            table {
+                @apply border-collapse w-full;
+            }
+
+            th, td {
+                @apply border border-border;
+                @apply p-2 text-left;
+            }
+
+            th {
+                @apply bg-muted font-semibold;
+            }
+
+            /* Badge/tag styling */
+            .badge {
+                @apply inline-flex items-center rounded-full;
+                @apply px-2.5 py-0.5 text-xs font-semibold;
+                @apply bg-primary/10 text-primary-foreground;
+            }
+
+            /* Focus outline for accessibility */
+            :focus-visible {
+                @apply outline-none ring-2 ring-ring ring-offset-2;
+            }
+
+            /* Selection styling */
+            ::selection {
+                @apply bg-primary/20 text-foreground;
+            }
+        </style>
+
+        <!-- Styles -->
+        <style>
+            :root {
+                --background: 0 0% 100%;
+                --foreground: 222.2 84% 4.9%;
+                --card: 0 0% 100%;
+                --card-foreground: 222.2 84% 4.9%;
+                --popover: 0 0% 100%;
+                --popover-foreground: 222.2 84% 4.9%;
+                --primary: 222.2 47.4% 11.2%;
+                --primary-foreground: 210 40% 98%;
+                --secondary: 210 40% 96.1%;
+                --secondary-foreground: 222.2 47.4% 11.2%;
+                --muted: 210 40% 96.1%;
+                --muted-foreground: 215.4 16.3% 46.9%;
+                --accent: 210 40% 96.1%;
+                --accent-foreground: 222.2 47.4% 11.2%;
+                --destructive: 0 84.2% 60.2%;
+                --destructive-foreground: 210 40% 98%;
+                --border: 214.3 31.8% 91.4%;
+                --input: 214.3 31.8% 91.4%;
+                --ring: 222.2 84% 4.9%;
+                --radius: 0.5rem;
+            }
+            .dark {
+                --background: 222.2 84% 4.9%;
+                --foreground: 210 40% 98%;
+                --card: 222.2 84% 4.9%;
+                --card-foreground: 210 40% 98%;
+                --popover: 222.2 84% 4.9%;
+                --popover-foreground: 210 40% 98%;
+                --primary: 210 40% 98%;
+                --primary-foreground: 222.2 47.4% 11.2%;
+                --secondary: 217.2 32.6% 17.5%;
+                --secondary-foreground: 210 40% 98%;
+                --muted: 217.2 32.6% 17.5%;
+                --muted-foreground: 215 20.2% 65.1%;
+                --accent: 217.2 32.6% 17.5%;
+                --accent-foreground: 210 40% 98%;
+                --destructive: 0 62.8% 30.6%;
+                --destructive-foreground: 210 40% 98%;
+                --border: 217.2 32.6% 17.5%;
+                --input: 217.2 32.6% 17.5%;
+                --ring: 212.7 26.8% 83.9%;
+            }
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: ["class"],
+                theme: {
+                    container: {
+                        center: true,
+                        padding: "2rem",
+                        screens: {
+                            "2xl": "1400px",
+                        },
+                    },
+                    extend: {
+                        colors: {
+                            border: "hsl(var(--border))",
+                            input: "hsl(var(--input))",
+                            ring: "hsl(var(--ring))",
+                            background: "hsl(var(--background))",
+                            foreground: "hsl(var(--foreground))",
+                            primary: {
+                                DEFAULT: "hsl(var(--primary))",
+                                foreground: "hsl(var(--primary-foreground))",
+                            },
+                            secondary: {
+                                DEFAULT: "hsl(var(--secondary))",
+                                foreground: "hsl(var(--secondary-foreground))",
+                            },
+                            destructive: {
+                                DEFAULT: "hsl(var(--destructive))",
+                                foreground: "hsl(var(--destructive-foreground))",
+                            },
+                            muted: {
+                                DEFAULT: "hsl(var(--muted))",
+                                foreground: "hsl(var(--muted-foreground))",
+                            },
+                            accent: {
+                                DEFAULT: "hsl(var(--accent))",
+                                foreground: "hsl(var(--accent-foreground))",
+                            },
+                            popover: {
+                                DEFAULT: "hsl(var(--popover))",
+                                foreground: "hsl(var(--popover-foreground))",
+                            },
+                            card: {
+                                DEFAULT: "hsl(var(--card))",
+                                foreground: "hsl(var(--card-foreground))",
+                            },
+                        },
+                        borderRadius: {
+                            lg: "var(--radius)",
+                            md: "calc(var(--radius) - 2px)",
+                            sm: "calc(var(--radius) - 4px)",
+                        },
+                    },
+                },
+            }
+        </script>
+
+        <!-- Load React only -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
+
+        <script>
+            // Ensure React and ReactDOM are globally available
+            if (!window.React || !window.ReactDOM) {
+               throw new Error('React or ReactDOM not loaded');
+            }
+
+            window.React = React;
+            window.ReactDOM = ReactDOM;
+            window.createPortal = ReactDOM.createPortal;
+        </script>
+    <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.my-2{margin-top:0.5rem;margin-bottom:0.5rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mt-2{margin-top:0.5rem}.flex{display:flex}.h-20{height:5rem}.h-4{height:1rem}.h-full{height:100%}.w-12{width:3rem}.w-4{width:1rem}.w-full{width:100%}.cursor-pointer{cursor:pointer}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.gap-1{gap:0.25rem}.gap-3{gap:0.75rem}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.border{border-width:1px}.border-gray-400{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity, 1))}.border-yellow-500{--tw-border-opacity:1;border-color:rgb(234 179 8 / var(--tw-border-opacity, 1))}.bg-background{background-color:hsl(var(--background))}.bg-\[\#008080\]{--tw-bg-opacity:1;background-color:rgb(0 128 128 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-\[12px\]{font-size:12px}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.text-foreground{color:hsl(var(--foreground))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.hover\:bg-blue-200:hover{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}</style></head>
+    <body class="bg-background text-foreground">
+        <div id="root"><div class="flex flex-col h-full w-full bg-[#008080] overflow-hidden font-sans text-[12px]"><style>
+        @import url("https://unpkg.com/98.css");
+        /* 核心修复：强制所有标题栏文字使用 Flexbox 进行垂直居中对齐 */
+        .title-bar-text {
+          display: flex !important;
+          align-items: center !important;
+          gap: 4px;
+        }
+        
+        .app-container {
+          display: grid;
+          grid-template-columns: 180px 1fr 260px; 
+          gap: 12px;
+          padding: 12px;
+          height: 100%;
+          box-sizing: border-box;
+        }
+        .full-height-window { display: flex; flex-direction: column; height: 100%; }
+        .window-content-scroll { flex: 1; overflow-y: auto; padding: 6px; background: #c0c0c0; }
+        .canvas-area { overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; height: 100%; width: 100%; }
+        .grid-bg { background-size: 8px 8px; background-image: linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px); }
+        .widget-box { position: absolute; box-sizing: border-box; user-select: none; }
+        .widget-box.editable { cursor: move; }
+        .widget-box.editable.selected { outline: 1px dotted black; box-shadow: 0 0 0 1px white; z-index: 9999 !important; }
+        .tool-item { display: flex; align-items: center; gap: 6px; padding: 4px; cursor: grab; border: 1px solid transparent; }
+        .tool-item:hover { border: 1px outset #fff; background: #eee; }
+        .tool-item:active { border: 1px inset #fff; cursor: grabbing; }
+        .win-scrollbar { background: #dfdfdf; border: 1px solid white; box-shadow: inset 1px 1px #808080; display: flex; justify-content: space-between; }
+        .win-scrollbar-btn { background: #c0c0c0; border: 1px outset #fff; display: flex; align-items: center; justify-content: center; font-size: 8px; cursor: pointer; }
+        .win-scrollbar-btn:active { border: 1px inset #fff; }
+        .win-thumb { background: #c0c0c0; border: 1px outset #fff; position: relative; }
+        .resize-handle { position: absolute; width: 6px; height: 6px; background: white; border: 1px solid black; z-index: 10000; }
+        .rh-nw { top:-3px; left:-3px; cursor: nw-resize; }
+        .rh-n  { top:-3px; left:50%; transform:translateX(-50%); cursor: n-resize; }
+        .rh-ne { top:-3px; right:-3px; cursor: ne-resize; }
+        .rh-e  { top:50%; right:-3px; transform:translateY(-50%); cursor: e-resize; }
+        .rh-se { bottom:-3px; right:-3px; cursor: se-resize; }
+        .rh-s  { bottom:-3px; left:50%; transform:translateX(-50%); cursor: s-resize; }
+        .rh-sw { bottom:-3px; left:-3px; cursor: sw-resize; }
+        .rh-w  { top:50%; left:-3px; transform:translateY(-50%); cursor: w-resize; }
+        .win-resize-handle { position: absolute; background: transparent; z-index: 50; }
+        .wr-e { top:0; right:-5px; width:10px; height:100%; cursor:e-resize; }
+        .wr-s { bottom:-5px; left:0; width:100%; height:10px; cursor:s-resize; }
+        .wr-se { bottom:-5px; right:-5px; width:15px; height:15px; cursor:se-resize; }
+        .wr-w { top:0; left:-5px; width:10px; height:100%; cursor:w-resize; }
+        .wr-n { top:-5px; left:0; width:100%; height:10px; cursor:n-resize; }
+        .wr-nw { top:-5px; left:-5px; width:15px; height:15px; cursor:nw-resize; }
+        .wr-ne { top:-5px; right:-5px; width:15px; height:15px; cursor:ne-resize; }
+        .wr-sw { bottom:-5px; left:-5px; width:15px; height:15px; cursor:sw-resize; }
+        @media (max-width: 800px) { .app-container { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; } }
+      </style><div class="app-container"><div class="window full-height-window"><div class="title-bar"><div class="title-bar-text"><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" alt="" style="width: 16px; height: 16px;"><span>组件箱</span></div></div><div class="window-body window-content-scroll"><div class="mb-2 text-gray-600 bg-yellow-100 border border-yellow-500 p-1 text-xs">拖拽组件到画布</div><fieldset class=""><legend>标准控件</legend><div class="tool-item group relative" draggable="true" title="标准点击按钮，支持图标和文字"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="" style="width: 16px; height: 16px;"><span>按钮 (Button)</span></div><div class="tool-item group relative" draggable="true" title="单行文本输入框"><img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" alt="" style="width: 16px; height: 16px;"><span>输入框 (Input)</span></div><div class="tool-item group relative" draggable="true" title="多行文本编辑区域"><img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" alt="" style="width: 16px; height: 16px;"><span>多行文本 (Area)</span></div><div class="tool-item group relative" draggable="true" title="复选框，支持选中状态"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="" style="width: 16px; height: 16px;"><span>复选框 (Check)</span></div><div class="tool-item group relative" draggable="true" title="单选按钮，同一组互斥"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="" style="width: 16px; height: 16px;"><span>单选框 (Radio)</span></div><div class="tool-item group relative" draggable="true" title="下拉选择菜单"><img src="https://win98icons.alexmeub.com/icons/png/directory_open-4.png" alt="" style="width: 16px; height: 16px;"><span>下拉框 (Select)</span></div><div class="tool-item group relative" draggable="true" title="列表展示框"><img src="https://win98icons.alexmeub.com/icons/png/directory_open-4.png" alt="" style="width: 16px; height: 16px;"><span>列表框 (List)</span></div></fieldset><fieldset class="mt-2 "><legend>高级 &amp; 滚动</legend><div class="tool-item group relative" draggable="true" title="滑动条控件"><img src="https://win98icons.alexmeub.com/icons/png/paint-4.png" alt="" style="width: 16px; height: 16px;"><span>滑块 (Slider)</span></div><div class="tool-item group relative" draggable="true" title="显示进度的条形控件"><img src="https://win98icons.alexmeub.com/icons/png/installer-0.png" alt="" style="width: 16px; height: 16px;"><span>进度条 (Progress)</span></div><div class="tool-item group relative" draggable="true" title="水平方向滚动条"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="" style="width: 16px; height: 16px;"><span>水平滚动 (HScroll)</span></div><div class="tool-item group relative" draggable="true" title="垂直方向滚动条"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="" style="width: 16px; height: 16px;"><span>垂直滚动 (VScroll)</span></div><div class="tool-item group relative" draggable="true" title="带有箭头的微调按钮"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="" style="width: 16px; height: 16px;"><span>滚动按钮 (Btn)</span></div></fieldset><fieldset class="mt-2 "><legend>容器 &amp; 装饰</legend><div class="tool-item group relative" draggable="true" title="纯文本展示标签"><img src="https://win98icons.alexmeub.com/icons/png/html-4.png" alt="" style="width: 16px; height: 16px;"><span>标签 (Label)</span></div><div class="tool-item group relative" draggable="true" title="显示一张图片"><img src="https://win98icons.alexmeub.com/icons/png/paint-4.png" alt="" style="width: 16px; height: 16px;"><span>图片 (Image)</span></div><div class="tool-item group relative" draggable="true" title="用于分组的边框容器"><img src="https://win98icons.alexmeub.com/icons/png/application_hourglass-4.png" alt="" style="width: 16px; height: 16px;"><span>分组框 (Group)</span></div><div class="tool-item group relative" draggable="true" title="选项卡切换控件"><img src="https://win98icons.alexmeub.com/icons/png/application_hourglass-4.png" alt="" style="width: 16px; height: 16px;"><span>标签页 (Tabs)</span></div><div class="tool-item group relative" draggable="true" title="树形目录结构"><img src="https://win98icons.alexmeub.com/icons/png/network_neighborhood-4.png" alt="" style="width: 16px; height: 16px;"><span>树形图 (Tree)</span></div><div class="tool-item group relative" draggable="true" title="底部状态栏"><img src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="" style="width: 16px; height: 16px;"><span>状态栏 (Status)</span></div></fieldset></div></div><div class="canvas-area"><div class="window" style="width: 600px; height: 450px; position: relative; box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 10px;"><div class="win-resize-handle wr-e"></div><div class="win-resize-handle wr-s"></div><div class="win-resize-handle wr-se"></div><div class="win-resize-handle wr-w"></div><div class="win-resize-handle wr-n"></div><div class="win-resize-handle wr-nw"></div><div class="win-resize-handle wr-ne"></div><div class="win-resize-handle wr-sw"></div><div class="title-bar"><div class="title-bar-text"><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" style="width: 16px; height: 16px; image-rendering: pixelated;" alt=""><span>我的应用程序</span></div><div class="title-bar-controls"><button aria-label="Minimize"></button><button aria-label="Maximize"></button><button aria-label="Close"></button></div></div><div class="window-body grid-bg" style="height: calc(100% - 28px); position: relative; overflow: hidden; margin: 0px;"></div></div></div><div class="window full-height-window"><div class="title-bar"><div class="title-bar-text"><img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" alt="" style="width: 16px; height: 16px;"><span>属性与代码</span></div></div><div class="window-body window-content-scroll flex flex-col"><div class="field-row mb-2"><input type="checkbox" id="run-mode"><label for="run-mode" class="font-bold text-blue-800 cursor-pointer">🔴 编辑模式 (Edit)</label></div><menu role="tablist"><li role="tab" aria-selected="true"><a href="#props">属性</a></li><li role="tab" aria-selected="false"><a href="#code">代码</a></li></menu><div class="window" role="tabpanel" style="flex: 1 1 0%; margin-top: 8px; display: flex; flex-direction: column;"><div class="window-body h-full" style="overflow-y: auto;"><div class="flex flex-col gap-3"><fieldset><legend>全局设置</legend><div class="field-row-stacked"><label>窗口标题:</label><input type="text" value="我的应用程序"></div><div class="field-row-stacked mt-2"><label>图标:</label><div class="flex flex-wrap gap-1 mb-1 p-1 border inset bg-white h-20 overflow-y-auto"><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" alt="computer" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="computer"><img src="https://win98icons.alexmeub.com/icons/png/directory_open-4.png" alt="folder" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="folder"><img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" alt="text" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="text"><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-4.png" alt="settings" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="settings"><img src="https://win98icons.alexmeub.com/icons/png/application_hourglass-4.png" alt="window" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="window"><img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" alt="trash" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="trash"><img src="https://win98icons.alexmeub.com/icons/png/html-4.png" alt="html" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="html"><img src="https://win98icons.alexmeub.com/icons/png/paint-4.png" alt="paint" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="paint"><img src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="console" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="console"><img src="https://win98icons.alexmeub.com/icons/png/network_neighborhood-4.png" alt="tree" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="tree"><img src="https://win98icons.alexmeub.com/icons/png/msg_warning-0.png" alt="msgbox" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="msgbox"><img src="https://win98icons.alexmeub.com/icons/png/installer-0.png" alt="installer" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="installer"><img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png" alt="cd" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="cd"><img src="https://win98icons.alexmeub.com/icons/png/print_server-4.png" alt="printer" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="printer"><img src="https://win98icons.alexmeub.com/icons/png/msie1-4.png" alt="internet" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="internet"><img src="https://win98icons.alexmeub.com/icons/png/outlook_express-4.png" alt="mail" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="mail"><img src="https://win98icons.alexmeub.com/icons/png/windows_media_player-4.png" alt="media" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="media"><img src="https://win98icons.alexmeub.com/icons/png/help_book_small-4.png" alt="help" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="help"><img src="https://win98icons.alexmeub.com/icons/png/search_file-4.png" alt="find" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="find"><img src="https://win98icons.alexmeub.com/icons/png/shut_down_cool-4.png" alt="shut" class="w-4 h-4 cursor-pointer hover:bg-blue-200" title="shut"></div><div class="flex items-center"><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" alt="current" class="w-4 h-4 mr-2 border border-gray-400"><input type="file" accept="image/*" style="width: 100%;"></div></div><hr class="my-2"><div class="field-row"><input type="checkbox" id="chk-grid" checked=""><label for="chk-grid">显示网格</label><input type="number" class="w-12 ml-2" value="8"><label>px</label></div></fieldset><fieldset><legend>组件属性</legend><div class="text-gray-500 p-2">请先在画布中选择组件...</div></fieldset></div></div></div></div></div></div></div></div>
+        <script>
+            var App = (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+  var __commonJS = (cb, mod) => function __require() {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // react-globals:react
+  var require_react = __commonJS({
+    "react-globals:react"(exports, module) {
+      module.exports = window.React;
+    }
+  });
+
+  // <stdin>
+  var stdin_exports = {};
+  __export(stdin_exports, {
+    default: () => App
+  });
+  var import_react = __toESM(require_react());
+  var ICONS = {
+    computer: "https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png",
+    folder: "https://win98icons.alexmeub.com/icons/png/directory_open-4.png",
+    text: "https://win98icons.alexmeub.com/icons/png/notepad-4.png",
+    settings: "https://win98icons.alexmeub.com/icons/png/settings_gear-4.png",
+    window: "https://win98icons.alexmeub.com/icons/png/application_hourglass-4.png",
+    trash: "https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png",
+    html: "https://win98icons.alexmeub.com/icons/png/html-4.png",
+    paint: "https://win98icons.alexmeub.com/icons/png/paint-4.png",
+    console: "https://win98icons.alexmeub.com/icons/png/console_prompt-0.png",
+    tree: "https://win98icons.alexmeub.com/icons/png/network_neighborhood-4.png",
+    msgbox: "https://win98icons.alexmeub.com/icons/png/msg_warning-0.png",
+    installer: "https://win98icons.alexmeub.com/icons/png/installer-0.png",
+    cd: "https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png",
+    printer: "https://win98icons.alexmeub.com/icons/png/print_server-4.png",
+    internet: "https://win98icons.alexmeub.com/icons/png/msie1-4.png",
+    mail: "https://win98icons.alexmeub.com/icons/png/outlook_express-4.png",
+    media: "https://win98icons.alexmeub.com/icons/png/windows_media_player-4.png",
+    help: "https://win98icons.alexmeub.com/icons/png/help_book_small-4.png",
+    find: "https://win98icons.alexmeub.com/icons/png/search_file-4.png",
+    shut: "https://win98icons.alexmeub.com/icons/png/shut_down_cool-4.png"
+  };
+  var DEFAULT_WINDOW_ICON = ICONS.computer;
+  var generateId = () => Math.random().toString(36).substr(2, 9);
+  function App() {
+    const [widgets, setWidgets] = (0, import_react.useState)([]);
+    const [selectedId, setSelectedId] = (0, import_react.useState)(null);
+    const [windowTitle, setWindowTitle] = (0, import_react.useState)("\u6211\u7684\u5E94\u7528\u7A0B\u5E8F");
+    const [windowIcon, setWindowIcon] = (0, import_react.useState)(DEFAULT_WINDOW_ICON);
+    const [activeTab, setActiveTab] = (0, import_react.useState)("props");
+    const [copyFeedback, setCopyFeedback] = (0, import_react.useState)("");
+    const [isRunMode, setIsRunMode] = (0, import_react.useState)(false);
+    const [showGrid, setShowGrid] = (0, import_react.useState)(true);
+    const [gridSize, setGridSize] = (0, import_react.useState)(8);
+    const [canvasRect, setCanvasRect] = (0, import_react.useState)({ width: 600, height: 450 });
+    const [isDraggingWidget, setIsDraggingWidget] = (0, import_react.useState)(false);
+    const [isResizingWidget, setIsResizingWidget] = (0, import_react.useState)(false);
+    const [isResizingWindow, setIsResizingWindow] = (0, import_react.useState)(false);
+    const [resizeHandle, setResizeHandle] = (0, import_react.useState)(null);
+    const [dragOffset, setDragOffset] = (0, import_react.useState)({ x: 0, y: 0 });
+    const [initialRect, setInitialRect] = (0, import_react.useState)(null);
+    const canvasRef = (0, import_react.useRef)(null);
+    const snap = (value) => !isRunMode && showGrid ? Math.round(value / gridSize) * gridSize : value;
+    const addWidget = (type, dropX = 20, dropY = 20) => {
+      const defaultSize = getDefaultSize(type);
+      const newWidget = {
+        id: generateId(),
+        type,
+        x: snap(dropX),
+        y: snap(dropY),
+        width: defaultSize.width,
+        height: defaultSize.height,
+        props: getDefaultProps(type),
+        zIndex: widgets.length + 1
+      };
+      setWidgets((prev) => [...prev, newWidget]);
+      setSelectedId(newWidget.id);
+    };
+    const removeWidget = (id) => {
+      setWidgets((prev) => prev.filter((w) => w.id !== id));
+      if (selectedId === id)
+        setSelectedId(null);
+    };
+    const updateWidgetProps = (id, key, value) => {
+      setWidgets((prev) => prev.map(
+        (w) => w.id === id ? __spreadProps(__spreadValues({}, w), { props: __spreadProps(__spreadValues({}, w.props), { [key]: value }) }) : w
+      ));
+    };
+    const getComponentName = (type) => {
+      const map = {
+        button: "\u6309\u94AE (Button)",
+        text: "\u5355\u884C\u8F93\u5165 (Input)",
+        textarea: "\u591A\u884C\u6587\u672C (Textarea)",
+        checkbox: "\u590D\u9009\u6846 (Checkbox)",
+        radio: "\u5355\u9009\u6846 (Radio)",
+        dropdown: "\u4E0B\u62C9\u83DC\u5355 (Dropdown)",
+        listbox: "\u5217\u8868\u6846 (Listbox)",
+        slider: "\u6ED1\u52A8\u6761 (Slider)",
+        progressbar: "\u8FDB\u5EA6\u6761 (Progress)",
+        image: "\u56FE\u7247 (Image)",
+        paragraph: "\u6587\u5B57\u6807\u7B7E (Label)",
+        groupbox: "\u5206\u7EC4\u6846 (GroupBox)",
+        tabs: "\u6807\u7B7E\u9875 (Tabs)",
+        treeview: "\u6811\u5F62\u56FE (Tree)",
+        statusbar: "\u72B6\u6001\u680F (Status)",
+        hscrollbar: "\u6C34\u5E73\u6EDA\u52A8\u6761 (HScroll)",
+        vscrollbar: "\u5782\u76F4\u6EDA\u52A8\u6761 (VScroll)",
+        scrollbtn: "\u6EDA\u52A8\u6309\u94AE (Btn)"
+      };
+      return map[type] || type;
+    };
+    const getComponentDesc = (type) => {
+      const map = {
+        button: "\u6807\u51C6\u70B9\u51FB\u6309\u94AE\uFF0C\u652F\u6301\u56FE\u6807\u548C\u6587\u5B57",
+        text: "\u5355\u884C\u6587\u672C\u8F93\u5165\u6846",
+        textarea: "\u591A\u884C\u6587\u672C\u7F16\u8F91\u533A\u57DF",
+        checkbox: "\u590D\u9009\u6846\uFF0C\u652F\u6301\u9009\u4E2D\u72B6\u6001",
+        radio: "\u5355\u9009\u6309\u94AE\uFF0C\u540C\u4E00\u7EC4\u4E92\u65A5",
+        dropdown: "\u4E0B\u62C9\u9009\u62E9\u83DC\u5355",
+        listbox: "\u5217\u8868\u5C55\u793A\u6846",
+        slider: "\u6ED1\u52A8\u6761\u63A7\u4EF6",
+        progressbar: "\u663E\u793A\u8FDB\u5EA6\u7684\u6761\u5F62\u63A7\u4EF6",
+        image: "\u663E\u793A\u4E00\u5F20\u56FE\u7247",
+        paragraph: "\u7EAF\u6587\u672C\u5C55\u793A\u6807\u7B7E",
+        groupbox: "\u7528\u4E8E\u5206\u7EC4\u7684\u8FB9\u6846\u5BB9\u5668",
+        tabs: "\u9009\u9879\u5361\u5207\u6362\u63A7\u4EF6",
+        treeview: "\u6811\u5F62\u76EE\u5F55\u7ED3\u6784",
+        statusbar: "\u5E95\u90E8\u72B6\u6001\u680F",
+        hscrollbar: "\u6C34\u5E73\u65B9\u5411\u6EDA\u52A8\u6761",
+        vscrollbar: "\u5782\u76F4\u65B9\u5411\u6EDA\u52A8\u6761",
+        scrollbtn: "\u5E26\u6709\u7BAD\u5934\u7684\u5FAE\u8C03\u6309\u94AE"
+      };
+      return map[type] || "\u7EC4\u4EF6";
+    };
+    const getDefaultSize = (type) => {
+      switch (type) {
+        case "button":
+          return { width: 80, height: 24 };
+        case "text":
+          return { width: 120, height: 24 };
+        case "textarea":
+          return { width: 200, height: 100 };
+        case "checkbox":
+          return { width: 120, height: 24 };
+        case "radio":
+          return { width: 120, height: 24 };
+        case "dropdown":
+          return { width: 120, height: 24 };
+        case "listbox":
+          return { width: 120, height: 100 };
+        case "slider":
+          return { width: 120, height: 30 };
+        case "progressbar":
+          return { width: 150, height: 20 };
+        case "image":
+          return { width: 64, height: 64 };
+        case "paragraph":
+          return { width: 100, height: 24 };
+        case "groupbox":
+          return { width: 200, height: 150 };
+        case "tabs":
+          return { width: 250, height: 150 };
+        case "treeview":
+          return { width: 150, height: 200 };
+        case "statusbar":
+          return { width: 300, height: 24 };
+        case "hscrollbar":
+          return { width: 150, height: 16 };
+        case "vscrollbar":
+          return { width: 16, height: 150 };
+        case "scrollbtn":
+          return { width: 16, height: 16 };
+        default:
+          return { width: 100, height: 50 };
+      }
+    };
+    const getDefaultProps = (type) => {
+      switch (type) {
+        case "button":
+          return { label: "\u786E \u5B9A", textAlign: "center", iconSrc: "", iconW: 16, iconH: 16, disabled: false };
+        case "text":
+          return { value: "", placeholder: "" };
+        case "textarea":
+          return { value: "\u8FD9\u91CC\u662F\u591A\u884C\u6587\u672C\u5185\u5BB9..." };
+        case "checkbox":
+          return { label: "\u9009\u9879", checked: false, disabled: false };
+        case "radio":
+          return { label: "\u5355\u9009", name: "radio-grp", checked: false };
+        case "dropdown":
+          return { options: "\u9009\u9879A,\u9009\u9879B,\u9009\u9879C" };
+        case "listbox":
+          return { options: "\u9879\u76EE1,\u9879\u76EE2,\u9879\u76EE3" };
+        case "slider":
+          return { min: 0, max: 10, value: 0 };
+        case "progressbar":
+          return { value: 50, max: 100 };
+        case "image":
+          return { src: "https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" };
+        case "paragraph":
+          return { text: "\u6587\u672C\u6807\u7B7E" };
+        case "groupbox":
+          return { label: "\u5206\u7EC4\u6807\u9898" };
+        case "tabs":
+          return { tabs: "\u5E38\u89C4,\u9AD8\u7EA7,\u8BBE\u7F6E", activeIndex: 0 };
+        case "treeview":
+          return { data: "C:/\n  Documents\n  Program Files" };
+        case "statusbar":
+          return { text: "\u5C31\u7EEA" };
+        case "hscrollbar":
+          return { value: 0 };
+        case "vscrollbar":
+          return { value: 0 };
+        case "scrollbtn":
+          return { direction: "up" };
+        default:
+          return {};
+      }
+    };
+    const handleDragStartTool = (e, type) => {
+      e.dataTransfer.setData("widgetType", type);
+      e.dataTransfer.effectAllowed = "copy";
+    };
+    const handleDropCanvas = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isRunMode)
+        return;
+      const type = e.dataTransfer.getData("widgetType");
+      if (type && canvasRef.current) {
+        const rect = canvasRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        addWidget(type, x, y);
+      }
+    };
+    const handleDragOverCanvas = (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "copy";
+    };
+    const handleMouseDownWidget = (e, id) => {
+      if (isRunMode)
+        return;
+      e.stopPropagation();
+      setSelectedId(id);
+      setIsDraggingWidget(true);
+      const widget = widgets.find((w) => w.id === id);
+      const rect = canvasRef.current.getBoundingClientRect();
+      setDragOffset({
+        x: e.clientX - rect.left - widget.x,
+        y: e.clientY - rect.top - widget.y
+      });
+    };
+    const handleMouseDownResizeWidget = (e, id, handle) => {
+      if (isRunMode)
+        return;
+      e.stopPropagation();
+      e.preventDefault();
+      setSelectedId(id);
+      setIsResizingWidget(true);
+      setResizeHandle(handle);
+      const widget = widgets.find((w) => w.id === id);
+      setInitialRect({
+        x: widget.x,
+        y: widget.y,
+        w: widget.width,
+        h: widget.height,
+        mouseX: e.clientX,
+        mouseY: e.clientY
+      });
+    };
+    const handleMouseDownResizeWindow = (e, handle) => {
+      if (isRunMode)
+        return;
+      e.stopPropagation();
+      e.preventDefault();
+      setIsResizingWindow(true);
+      setResizeHandle(handle);
+      setInitialRect({
+        w: canvasRect.width,
+        h: canvasRect.height,
+        mouseX: e.clientX,
+        mouseY: e.clientY
+      });
+    };
+    (0, import_react.useEffect)(() => {
+      const handleGlobalMove = (e) => {
+        if (isRunMode)
+          return;
+        if (isDraggingWidget && selectedId && canvasRef.current) {
+          const rect = canvasRef.current.getBoundingClientRect();
+          const x = e.clientX - rect.left - dragOffset.x;
+          const y = e.clientY - rect.top - dragOffset.y;
+          setWidgets((prev) => prev.map((w) => w.id === selectedId ? __spreadProps(__spreadValues({}, w), { x: snap(x), y: snap(y) }) : w));
+        } else if (isResizingWidget && selectedId && initialRect) {
+          const dx = e.clientX - initialRect.mouseX;
+          const dy = e.clientY - initialRect.mouseY;
+          setWidgets((prev) => prev.map((w) => {
+            if (w.id !== selectedId)
+              return w;
+            let { x, y, w: width, h: height } = initialRect;
+            let newW = width, newH = height, newX = x, newY = y;
+            if (resizeHandle.includes("e"))
+              newW = width + dx;
+            if (resizeHandle.includes("s"))
+              newH = height + dy;
+            if (resizeHandle.includes("w")) {
+              newW = width - dx;
+              newX = x + dx;
+            }
+            if (resizeHandle.includes("n")) {
+              newH = height - dy;
+              newY = y + dy;
+            }
+            if (showGrid) {
+              if (resizeHandle.includes("e") || resizeHandle.includes("w"))
+                newW = Math.round(newW / gridSize) * gridSize;
+              if (resizeHandle.includes("s") || resizeHandle.includes("n"))
+                newH = Math.round(newH / gridSize) * gridSize;
+              if (resizeHandle.includes("w"))
+                newX = Math.round(newX / gridSize) * gridSize;
+              if (resizeHandle.includes("n"))
+                newY = Math.round(newY / gridSize) * gridSize;
+            }
+            return __spreadProps(__spreadValues({}, w), { x: newX, y: newY, width: Math.max(10, newW), height: Math.max(10, newH) });
+          }));
+        } else if (isResizingWindow && initialRect) {
+          const dx = e.clientX - initialRect.mouseX;
+          const dy = e.clientY - initialRect.mouseY;
+          let newW = initialRect.w, newH = initialRect.h;
+          if (resizeHandle.includes("e"))
+            newW += dx;
+          if (resizeHandle.includes("s"))
+            newH += dy;
+          if (resizeHandle.includes("w"))
+            newW -= dx;
+          if (resizeHandle.includes("n"))
+            newH -= dy;
+          setCanvasRect({
+            width: Math.max(100, newW),
+            height: Math.max(50, newH)
+          });
+        }
+      };
+      const handleGlobalUp = () => {
+        setIsDraggingWidget(false);
+        setIsResizingWidget(false);
+        setIsResizingWindow(false);
+        setResizeHandle(null);
+      };
+      if (isDraggingWidget || isResizingWidget || isResizingWindow) {
+        window.addEventListener("mousemove", handleGlobalMove);
+        window.addEventListener("mouseup", handleGlobalUp);
+      }
+      return () => {
+        window.removeEventListener("mousemove", handleGlobalMove);
+        window.removeEventListener("mouseup", handleGlobalUp);
+      };
+    }, [isDraggingWidget, isResizingWidget, isResizingWindow, dragOffset, initialRect, resizeHandle, showGrid, gridSize, selectedId, isRunMode]);
+    const handleIconUpload = (e, setter) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => setter(reader.result);
+        reader.readAsDataURL(file);
+      }
+    };
+    const generateHTML = () => {
+      const sortedWidgets = [...widgets].sort((a, b) => a.zIndex - b.zIndex);
+      const widgetsHTML = sortedWidgets.map((w) => {
+        const stylePos = `position: absolute; left: ${w.x}px; top: ${w.y}px; width: ${w.width}px; height: ${w.height}px; box-sizing: border-box;`;
+        const commonProps = `id="${w.id}"${w.props.disabled ? " disabled" : ""}`;
+        let content = "";
+        switch (w.type) {
+          case "button":
+            const btnStyle = `display: flex; align-items: center; justify-content: ${w.props.textAlign === "left" ? "flex-start" : w.props.textAlign === "right" ? "flex-end" : "center"}; padding: 2px; gap: 4px;`;
+            const iconImg = w.props.iconSrc ? `<img src="${w.props.iconSrc}" style="width:${w.props.iconW}px;height:${w.props.iconH}px;">` : "";
+            content = `<button style="width:100%;height:100%;${btnStyle}" ${commonProps}>${iconImg}<span>${w.props.label}</span></button>`;
+            break;
+          case "text":
+            content = `<input type="text" value="${w.props.value}" placeholder="${w.props.placeholder}" style="width:100%;height:100%;" ${commonProps}>`;
+            break;
+          case "textarea":
+            content = `<textarea style="width:100%;height:100%;resize:none;" ${commonProps}>${w.props.value}</textarea>`;
+            break;
+          case "checkbox":
+            content = `<div class="field-row"><input type="checkbox" id="chk-${w.id}" ${w.props.checked ? "checked" : ""} ${commonProps}><label for="chk-${w.id}">${w.props.label}</label></div>`;
+            break;
+          case "radio":
+            content = `<div class="field-row"><input type="radio" name="${w.props.name}" id="rad-${w.id}" ${w.props.checked ? "checked" : ""} ${commonProps}><label for="rad-${w.id}">${w.props.label}</label></div>`;
+            break;
+          case "dropdown":
+            content = `<select style="width:100%;height:100%;" ${commonProps}>${w.props.options.split(",").map((o) => `<option>${o}</option>`).join("")}</select>`;
+            break;
+          case "listbox":
+            content = `<select size="5" style="width:100%;height:100%;" ${commonProps}>${w.props.options.split(",").map((o) => `<option>${o}</option>`).join("")}</select>`;
+            break;
+          case "slider":
+            content = `<input type="range" min="${w.props.min}" max="${w.props.max}" value="${w.props.value}" style="width:100%;" ${commonProps}>`;
+            break;
+          case "progressbar":
+            content = `<div class="progress-indicator" style="width:100%;height:100%;border:1px solid white;box-shadow:inset -1px -1px #fff, inset 1px 1px grey;background:#c0c0c0;position:relative;"><div style="background:navy;height:100%;width:${w.props.value / w.props.max * 100}%;"></div></div>`;
+            break;
+          case "groupbox":
+            content = `<fieldset style="width:100%;height:100%;margin:0;box-sizing:border-box;"><legend>${w.props.label}</legend></fieldset>`;
+            break;
+          case "statusbar":
+            content = `<div class="status-bar" style="width:100%;height:100%;"><p class="status-bar-field">${w.props.text}</p></div>`;
+            break;
+          case "tabs":
+            const tabs = w.props.tabs.split(",");
+            const tabHeaders = tabs.map((t, i) => `<li role="tab" ${i === 0 ? 'aria-selected="true"' : ""}><a href="#tabs">${t}</a></li>`).join("\n");
+            content = `<div style="width:100%;height:100%;display:flex;flex-direction:column;"><menu role="tablist" style="margin:0;">${tabHeaders}</menu><div class="window" role="tabpanel" style="flex:1;margin:0;"></div></div>`;
+            break;
+          case "image":
+            content = `<img src="${w.props.src}" style="width:100%;height:100%;object-fit:cover;">`;
+            break;
+          case "treeview":
+            content = `<ul class="tree-view" style="width:100%;height:100%;background:white;border:2px inset;overflow:auto;"><li>${w.props.data}</li></ul>`;
+            break;
+          case "hscrollbar":
+            content = `<div style="width:100%;height:100%;background:#dfdfdf;border:1px solid white;box-shadow:inset 1px 1px #808080;display:flex;flex-direction:row;align-items:center;justify-content:space-between;"><button class="button" style="width:16px;height:100%;min-width:16px;padding:0;">\u25C4</button><div style="flex:1;height:100%;background:#dfdfdf;position:relative;"><div style="width:20px;height:100%;background:#c0c0c0;border:2px outset #fff;position:absolute;left:0;"></div></div><button class="button" style="width:16px;height:100%;min-width:16px;padding:0;">\u25BA</button></div>`;
+            break;
+          case "vscrollbar":
+            content = `<div style="width:100%;height:100%;background:#dfdfdf;border:1px solid white;box-shadow:inset 1px 1px #808080;display:flex;flex-direction:column;align-items:center;justify-content:space-between;"><button class="button" style="width:100%;height:16px;min-height:16px;padding:0;">\u25B2</button><div style="flex:1;width:100%;background:#dfdfdf;position:relative;"><div style="height:20px;width:100%;background:#c0c0c0;border:2px outset #fff;position:absolute;top:0;"></div></div><button class="button" style="width:100%;height:16px;min-height:16px;padding:0;">\u25BC</button></div>`;
+            break;
+          case "scrollbtn":
+            const arrow = w.props.direction === "up" ? "\u25B2" : w.props.direction === "down" ? "\u25BC" : w.props.direction === "left" ? "\u25C4" : "\u25BA";
+            content = `<button style="width:100%;height:100%;padding:0;font-size:10px;">${arrow}</button>`;
+            break;
+          default:
+            content = `<div>${w.props.label || w.props.text || ""}</div>`;
+        }
+        return `<div style="${stylePos}">${content}</div>`;
+      }).join("\n");
+      const iconSrc = windowIcon.length > 5e3 ? windowIcon : windowIcon;
+      return `<div class="window" style="width:${canvasRect.width}px;height:${canvasRect.height}px;position:relative;">
+  <div class="title-bar">
+    <div class="title-bar-text" style="display:flex;align-items:center;">
+      <img src="${iconSrc}" style="width:16px;height:16px;margin-right:4px;">${windowTitle}
+    </div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button><button aria-label="Maximize"></button><button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" style="position:relative;height:calc(100% - 28px);overflow:hidden;">
+${widgetsHTML.split("\n").map((l) => "    " + l).join("\n")}
+  </div>
+</div>`;
+    };
+    const handleCopy = () => {
+      navigator.clipboard.writeText(generateHTML());
+      setCopyFeedback("\u590D\u5236\u6210\u529F!");
+      setTimeout(() => setCopyFeedback(""), 2e3);
+    };
+    return /* @__PURE__ */ import_react.default.createElement("div", { className: "flex flex-col h-full w-full bg-[#008080] overflow-hidden font-sans text-[12px]" }, /* @__PURE__ */ import_react.default.createElement("style", null, `
+        @import url("https://unpkg.com/98.css");
+        /* \u6838\u5FC3\u4FEE\u590D\uFF1A\u5F3A\u5236\u6240\u6709\u6807\u9898\u680F\u6587\u5B57\u4F7F\u7528 Flexbox \u8FDB\u884C\u5782\u76F4\u5C45\u4E2D\u5BF9\u9F50 */
+        .title-bar-text {
+          display: flex !important;
+          align-items: center !important;
+          gap: 4px;
+        }
+        
+        .app-container {
+          display: grid;
+          grid-template-columns: 180px 1fr 260px; 
+          gap: 12px;
+          padding: 12px;
+          height: 100%;
+          box-sizing: border-box;
+        }
+        .full-height-window { display: flex; flex-direction: column; height: 100%; }
+        .window-content-scroll { flex: 1; overflow-y: auto; padding: 6px; background: #c0c0c0; }
+        .canvas-area { overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; height: 100%; width: 100%; }
+        .grid-bg { background-size: ${gridSize}px ${gridSize}px; background-image: linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px); }
+        .widget-box { position: absolute; box-sizing: border-box; user-select: none; }
+        .widget-box.editable { cursor: move; }
+        .widget-box.editable.selected { outline: 1px dotted black; box-shadow: 0 0 0 1px white; z-index: 9999 !important; }
+        .tool-item { display: flex; align-items: center; gap: 6px; padding: 4px; cursor: grab; border: 1px solid transparent; }
+        .tool-item:hover { border: 1px outset #fff; background: #eee; }
+        .tool-item:active { border: 1px inset #fff; cursor: grabbing; }
+        .win-scrollbar { background: #dfdfdf; border: 1px solid white; box-shadow: inset 1px 1px #808080; display: flex; justify-content: space-between; }
+        .win-scrollbar-btn { background: #c0c0c0; border: 1px outset #fff; display: flex; align-items: center; justify-content: center; font-size: 8px; cursor: pointer; }
+        .win-scrollbar-btn:active { border: 1px inset #fff; }
+        .win-thumb { background: #c0c0c0; border: 1px outset #fff; position: relative; }
+        .resize-handle { position: absolute; width: 6px; height: 6px; background: white; border: 1px solid black; z-index: 10000; }
+        .rh-nw { top:-3px; left:-3px; cursor: nw-resize; }
+        .rh-n  { top:-3px; left:50%; transform:translateX(-50%); cursor: n-resize; }
+        .rh-ne { top:-3px; right:-3px; cursor: ne-resize; }
+        .rh-e  { top:50%; right:-3px; transform:translateY(-50%); cursor: e-resize; }
+        .rh-se { bottom:-3px; right:-3px; cursor: se-resize; }
+        .rh-s  { bottom:-3px; left:50%; transform:translateX(-50%); cursor: s-resize; }
+        .rh-sw { bottom:-3px; left:-3px; cursor: sw-resize; }
+        .rh-w  { top:50%; left:-3px; transform:translateY(-50%); cursor: w-resize; }
+        .win-resize-handle { position: absolute; background: transparent; z-index: 50; }
+        .wr-e { top:0; right:-5px; width:10px; height:100%; cursor:e-resize; }
+        .wr-s { bottom:-5px; left:0; width:100%; height:10px; cursor:s-resize; }
+        .wr-se { bottom:-5px; right:-5px; width:15px; height:15px; cursor:se-resize; }
+        .wr-w { top:0; left:-5px; width:10px; height:100%; cursor:w-resize; }
+        .wr-n { top:-5px; left:0; width:100%; height:10px; cursor:n-resize; }
+        .wr-nw { top:-5px; left:-5px; width:15px; height:15px; cursor:nw-resize; }
+        .wr-ne { top:-5px; right:-5px; width:15px; height:15px; cursor:ne-resize; }
+        .wr-sw { bottom:-5px; left:-5px; width:15px; height:15px; cursor:sw-resize; }
+        @media (max-width: 800px) { .app-container { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; } }
+      `), /* @__PURE__ */ import_react.default.createElement("div", { className: "app-container" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "window full-height-window" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar-text" }, /* @__PURE__ */ import_react.default.createElement("img", { src: ICONS.computer, alt: "", style: { width: 16, height: 16 } }), /* @__PURE__ */ import_react.default.createElement("span", null, "\u7EC4\u4EF6\u7BB1"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "window-body window-content-scroll" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "mb-2 text-gray-600 bg-yellow-100 border border-yellow-500 p-1 text-xs" }, isRunMode ? "\u8FD0\u884C\u6A21\u5F0F\u7981\u7528\u6DFB\u52A0" : "\u62D6\u62FD\u7EC4\u4EF6\u5230\u753B\u5E03"), /* @__PURE__ */ import_react.default.createElement("fieldset", { className: isRunMode ? "opacity-50 pointer-events-none" : "" }, /* @__PURE__ */ import_react.default.createElement("legend", null, "\u6807\u51C6\u63A7\u4EF6"), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "button", icon: ICONS.settings, label: "\u6309\u94AE (Button)", onDragStart: handleDragStartTool, desc: getComponentDesc("button") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "text", icon: ICONS.text, label: "\u8F93\u5165\u6846 (Input)", onDragStart: handleDragStartTool, desc: getComponentDesc("text") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "textarea", icon: ICONS.text, label: "\u591A\u884C\u6587\u672C (Area)", onDragStart: handleDragStartTool, desc: getComponentDesc("textarea") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "checkbox", icon: ICONS.settings, label: "\u590D\u9009\u6846 (Check)", onDragStart: handleDragStartTool, desc: getComponentDesc("checkbox") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "radio", icon: ICONS.settings, label: "\u5355\u9009\u6846 (Radio)", onDragStart: handleDragStartTool, desc: getComponentDesc("radio") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "dropdown", icon: ICONS.folder, label: "\u4E0B\u62C9\u6846 (Select)", onDragStart: handleDragStartTool, desc: getComponentDesc("dropdown") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "listbox", icon: ICONS.folder, label: "\u5217\u8868\u6846 (List)", onDragStart: handleDragStartTool, desc: getComponentDesc("listbox") })), /* @__PURE__ */ import_react.default.createElement("fieldset", { className: `mt-2 ${isRunMode ? "opacity-50 pointer-events-none" : ""}` }, /* @__PURE__ */ import_react.default.createElement("legend", null, "\u9AD8\u7EA7 & \u6EDA\u52A8"), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "slider", icon: ICONS.paint, label: "\u6ED1\u5757 (Slider)", onDragStart: handleDragStartTool, desc: getComponentDesc("slider") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "progressbar", icon: ICONS.installer, label: "\u8FDB\u5EA6\u6761 (Progress)", onDragStart: handleDragStartTool, desc: getComponentDesc("progressbar") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "hscrollbar", icon: ICONS.settings, label: "\u6C34\u5E73\u6EDA\u52A8 (HScroll)", onDragStart: handleDragStartTool, desc: getComponentDesc("hscrollbar") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "vscrollbar", icon: ICONS.settings, label: "\u5782\u76F4\u6EDA\u52A8 (VScroll)", onDragStart: handleDragStartTool, desc: getComponentDesc("vscrollbar") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "scrollbtn", icon: ICONS.settings, label: "\u6EDA\u52A8\u6309\u94AE (Btn)", onDragStart: handleDragStartTool, desc: getComponentDesc("scrollbtn") })), /* @__PURE__ */ import_react.default.createElement("fieldset", { className: `mt-2 ${isRunMode ? "opacity-50 pointer-events-none" : ""}` }, /* @__PURE__ */ import_react.default.createElement("legend", null, "\u5BB9\u5668 & \u88C5\u9970"), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "paragraph", icon: ICONS.html, label: "\u6807\u7B7E (Label)", onDragStart: handleDragStartTool, desc: getComponentDesc("paragraph") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "image", icon: ICONS.paint, label: "\u56FE\u7247 (Image)", onDragStart: handleDragStartTool, desc: getComponentDesc("image") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "groupbox", icon: ICONS.window, label: "\u5206\u7EC4\u6846 (Group)", onDragStart: handleDragStartTool, desc: getComponentDesc("groupbox") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "tabs", icon: ICONS.window, label: "\u6807\u7B7E\u9875 (Tabs)", onDragStart: handleDragStartTool, desc: getComponentDesc("tabs") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "treeview", icon: ICONS.tree, label: "\u6811\u5F62\u56FE (Tree)", onDragStart: handleDragStartTool, desc: getComponentDesc("treeview") }), /* @__PURE__ */ import_react.default.createElement(ToolItem, { type: "statusbar", icon: ICONS.console, label: "\u72B6\u6001\u680F (Status)", onDragStart: handleDragStartTool, desc: getComponentDesc("statusbar") })))), /* @__PURE__ */ import_react.default.createElement("div", { className: "canvas-area", onClick: () => !isRunMode && setSelectedId(null), onDragOver: handleDragOverCanvas, onDrop: handleDropCanvas }, /* @__PURE__ */ import_react.default.createElement("div", { className: "window", style: { width: canvasRect.width, height: canvasRect.height, position: "relative", boxShadow: "4px 4px 10px rgba(0,0,0,0.5)" }, onClick: (e) => e.stopPropagation() }, !isRunMode && /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-e", onMouseDown: (e) => handleMouseDownResizeWindow(e, "e") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-s", onMouseDown: (e) => handleMouseDownResizeWindow(e, "s") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-se", onMouseDown: (e) => handleMouseDownResizeWindow(e, "se") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-w", onMouseDown: (e) => handleMouseDownResizeWindow(e, "w") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-n", onMouseDown: (e) => handleMouseDownResizeWindow(e, "n") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-nw", onMouseDown: (e) => handleMouseDownResizeWindow(e, "nw") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-ne", onMouseDown: (e) => handleMouseDownResizeWindow(e, "ne") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "win-resize-handle wr-sw", onMouseDown: (e) => handleMouseDownResizeWindow(e, "sw") })), /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar-text" }, /* @__PURE__ */ import_react.default.createElement("img", { src: windowIcon, style: { width: 16, height: 16, imageRendering: "pixelated" }, alt: "" }), /* @__PURE__ */ import_react.default.createElement("span", null, windowTitle)), /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar-controls" }, /* @__PURE__ */ import_react.default.createElement("button", { "aria-label": "Minimize" }), /* @__PURE__ */ import_react.default.createElement("button", { "aria-label": "Maximize" }), /* @__PURE__ */ import_react.default.createElement("button", { "aria-label": "Close" }))), /* @__PURE__ */ import_react.default.createElement("div", { ref: canvasRef, className: `window-body ${!isRunMode && showGrid ? "grid-bg" : ""}`, style: { height: "calc(100% - 28px)", position: "relative", overflow: "hidden", margin: 0 } }, widgets.map((w) => /* @__PURE__ */ import_react.default.createElement("div", { key: w.id, className: `widget-box ${!isRunMode ? "editable" : ""} ${selectedId === w.id ? "selected" : ""}`, style: { left: w.x, top: w.y, width: w.width, height: w.height, zIndex: w.zIndex }, onMouseDown: (e) => handleMouseDownWidget(e, w.id) }, /* @__PURE__ */ import_react.default.createElement("div", { className: "w-full h-full overflow-hidden", style: { pointerEvents: isRunMode ? "auto" : "none" } }, /* @__PURE__ */ import_react.default.createElement(WidgetRenderer, { widget: w, isRunMode })), !isRunMode && selectedId === w.id && /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-nw", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "nw") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-n", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "n") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-ne", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "ne") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-e", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "e") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-se", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "se") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-s", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "s") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-sw", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "sw") }), /* @__PURE__ */ import_react.default.createElement("div", { className: "resize-handle rh-w", onMouseDown: (e) => handleMouseDownResizeWidget(e, w.id, "w") }))))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "window full-height-window" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "title-bar-text" }, /* @__PURE__ */ import_react.default.createElement("img", { src: ICONS.text, alt: "", style: { width: 16, height: 16 } }), /* @__PURE__ */ import_react.default.createElement("span", null, "\u5C5E\u6027\u4E0E\u4EE3\u7801"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "window-body window-content-scroll flex flex-col" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row mb-2" }, /* @__PURE__ */ import_react.default.createElement("input", { type: "checkbox", id: "run-mode", checked: isRunMode, onChange: (e) => {
+      setIsRunMode(e.target.checked);
+      setSelectedId(null);
+    } }), /* @__PURE__ */ import_react.default.createElement("label", { htmlFor: "run-mode", className: "font-bold text-blue-800 cursor-pointer" }, isRunMode ? "\u{1F7E2} \u8FD0\u884C\u6A21\u5F0F (Preview)" : "\u{1F534} \u7F16\u8F91\u6A21\u5F0F (Edit)")), /* @__PURE__ */ import_react.default.createElement("menu", { role: "tablist" }, /* @__PURE__ */ import_react.default.createElement("li", { role: "tab", "aria-selected": activeTab === "props", onClick: () => setActiveTab("props") }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#props" }, "\u5C5E\u6027")), /* @__PURE__ */ import_react.default.createElement("li", { role: "tab", "aria-selected": activeTab === "code", onClick: () => setActiveTab("code") }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#code" }, "\u4EE3\u7801"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "window", role: "tabpanel", style: { flex: 1, marginTop: 8, display: "flex", flexDirection: "column" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "window-body h-full", style: { overflowY: "auto" } }, activeTab === "props" && /* @__PURE__ */ import_react.default.createElement("div", { className: "flex flex-col gap-3" }, /* @__PURE__ */ import_react.default.createElement("fieldset", null, /* @__PURE__ */ import_react.default.createElement("legend", null, "\u5168\u5C40\u8BBE\u7F6E"), /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u7A97\u53E3\u6807\u9898:"), /* @__PURE__ */ import_react.default.createElement("input", { type: "text", value: windowTitle, onChange: (e) => setWindowTitle(e.target.value) })), /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked mt-2" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u56FE\u6807:"), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex flex-wrap gap-1 mb-1 p-1 border inset bg-white h-20 overflow-y-auto" }, Object.keys(ICONS).map((k) => /* @__PURE__ */ import_react.default.createElement("img", { key: k, src: ICONS[k], alt: k, className: "w-4 h-4 cursor-pointer hover:bg-blue-200", onClick: () => setWindowIcon(ICONS[k]), title: k }))), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex items-center" }, /* @__PURE__ */ import_react.default.createElement("img", { src: windowIcon, alt: "current", className: "w-4 h-4 mr-2 border border-gray-400" }), /* @__PURE__ */ import_react.default.createElement("input", { type: "file", accept: "image/*", onChange: (e) => handleIconUpload(e, setWindowIcon), style: { width: "100%" } }))), /* @__PURE__ */ import_react.default.createElement("hr", { className: "my-2" }), /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row" }, /* @__PURE__ */ import_react.default.createElement("input", { type: "checkbox", id: "chk-grid", checked: showGrid, onChange: (e) => setShowGrid(e.target.checked) }), /* @__PURE__ */ import_react.default.createElement("label", { htmlFor: "chk-grid" }, "\u663E\u793A\u7F51\u683C"), /* @__PURE__ */ import_react.default.createElement("input", { type: "number", className: "w-12 ml-2", value: gridSize, onChange: (e) => setGridSize(Number(e.target.value)) }), /* @__PURE__ */ import_react.default.createElement("label", null, "px"))), /* @__PURE__ */ import_react.default.createElement("fieldset", null, /* @__PURE__ */ import_react.default.createElement("legend", null, "\u7EC4\u4EF6\u5C5E\u6027"), !selectedId ? /* @__PURE__ */ import_react.default.createElement("div", { className: "text-gray-500 p-2" }, "\u8BF7\u5148\u5728\u753B\u5E03\u4E2D\u9009\u62E9\u7EC4\u4EF6...") : (() => {
+      const w = widgets.find((w2) => w2.id === selectedId);
+      if (!w)
+        return null;
+      return /* @__PURE__ */ import_react.default.createElement("div", { className: "flex flex-col gap-2" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "font-bold bg-blue-800 text-white px-1 flex justify-between" }, /* @__PURE__ */ import_react.default.createElement("span", null, getComponentName(w.type)), /* @__PURE__ */ import_react.default.createElement("span", { className: "text-[10px]" }, w.x, ",", w.y)), /* @__PURE__ */ import_react.default.createElement("button", { className: "mb-2", onClick: () => removeWidget(w.id) }, "\u5220\u9664\u6B64\u7EC4\u4EF6"), "label" in w.props && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u6807\u7B7E\u6587\u672C:"), /* @__PURE__ */ import_react.default.createElement("input", { type: "text", value: w.props.label, onChange: (e) => updateWidgetProps(w.id, "label", e.target.value) })), w.type === "button" && /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u5BF9\u9F50\u65B9\u5F0F:"), /* @__PURE__ */ import_react.default.createElement("select", { value: w.props.textAlign, onChange: (e) => updateWidgetProps(w.id, "textAlign", e.target.value) }, /* @__PURE__ */ import_react.default.createElement("option", { value: "center" }, "\u5C45\u4E2D"), /* @__PURE__ */ import_react.default.createElement("option", { value: "left" }, "\u5DE6\u5BF9\u9F50"), /* @__PURE__ */ import_react.default.createElement("option", { value: "right" }, "\u53F3\u5BF9\u9F50"))), /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u56FE\u6807\u8BBE\u7F6E:"), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex gap-1" }, /* @__PURE__ */ import_react.default.createElement("input", { type: "number", placeholder: "W", value: w.props.iconW, onChange: (e) => updateWidgetProps(w.id, "iconW", Number(e.target.value)), className: "w-10" }), /* @__PURE__ */ import_react.default.createElement("span", null, "x"), /* @__PURE__ */ import_react.default.createElement("input", { type: "number", placeholder: "H", value: w.props.iconH, onChange: (e) => updateWidgetProps(w.id, "iconH", Number(e.target.value)), className: "w-10" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "mt-1 flex flex-wrap gap-1 border bg-white h-16 overflow-y-auto p-1" }, Object.keys(ICONS).map((k) => /* @__PURE__ */ import_react.default.createElement("img", { key: k, src: ICONS[k], className: "w-4 h-4 cursor-pointer", onClick: () => updateWidgetProps(w.id, "iconSrc", ICONS[k]) }))), /* @__PURE__ */ import_react.default.createElement("input", { type: "file", className: "mt-1", onChange: (e) => handleIconUpload(e, (url) => updateWidgetProps(w.id, "iconSrc", url)) }), w.props.iconSrc && /* @__PURE__ */ import_react.default.createElement("button", { onClick: () => updateWidgetProps(w.id, "iconSrc", "") }, "\u6E05\u9664\u56FE\u6807"))), w.type === "image" && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u56FE\u7247\u6E90:"), /* @__PURE__ */ import_react.default.createElement("input", { type: "file", onChange: (e) => handleIconUpload(e, (url) => updateWidgetProps(w.id, "src", url)) }), /* @__PURE__ */ import_react.default.createElement("input", { type: "text", placeholder: "\u6216\u8F93\u5165URL", value: w.props.src, onChange: (e) => updateWidgetProps(w.id, "src", e.target.value) })), w.type === "scrollbtn" && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u7BAD\u5934\u65B9\u5411:"), /* @__PURE__ */ import_react.default.createElement("select", { value: w.props.direction, onChange: (e) => updateWidgetProps(w.id, "direction", e.target.value) }, /* @__PURE__ */ import_react.default.createElement("option", { value: "up" }, "\u4E0A (Up)"), /* @__PURE__ */ import_react.default.createElement("option", { value: "down" }, "\u4E0B (Down)"), /* @__PURE__ */ import_react.default.createElement("option", { value: "left" }, "\u5DE6 (Left)"), /* @__PURE__ */ import_react.default.createElement("option", { value: "right" }, "\u53F3 (Right)"))), "placeholder" in w.props && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u63D0\u793A\u8BED:"), /* @__PURE__ */ import_react.default.createElement("input", { type: "text", value: w.props.placeholder, onChange: (e) => updateWidgetProps(w.id, "placeholder", e.target.value) })), "text" in w.props && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u6587\u672C\u5185\u5BB9:"), w.type === "statusbar" ? /* @__PURE__ */ import_react.default.createElement("input", { type: "text", value: w.props.text, onChange: (e) => updateWidgetProps(w.id, "text", e.target.value) }) : /* @__PURE__ */ import_react.default.createElement("textarea", { rows: 3, value: w.props.text, onChange: (e) => updateWidgetProps(w.id, "text", e.target.value) })), "value" in w.props && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u5F53\u524D\u503C:"), /* @__PURE__ */ import_react.default.createElement("input", { type: "text", value: w.props.value, onChange: (e) => updateWidgetProps(w.id, "value", e.target.value) })), "options" in w.props && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row-stacked" }, /* @__PURE__ */ import_react.default.createElement("label", null, "\u9009\u9879 (\u9017\u53F7\u5206\u9694):"), /* @__PURE__ */ import_react.default.createElement("textarea", { rows: 2, value: w.props.options, onChange: (e) => updateWidgetProps(w.id, "options", e.target.value) })), "checked" in w.props && /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row" }, /* @__PURE__ */ import_react.default.createElement("input", { type: "checkbox", checked: w.props.checked, onChange: (e) => updateWidgetProps(w.id, "checked", e.target.checked) }), /* @__PURE__ */ import_react.default.createElement("label", null, "\u9ED8\u8BA4\u9009\u4E2D")));
+    })())), activeTab === "code" && /* @__PURE__ */ import_react.default.createElement("div", { className: "flex flex-col h-full" }, /* @__PURE__ */ import_react.default.createElement("textarea", { className: "flex-1 w-full font-mono text-xs p-1 bg-white border-2 border-gray-400 resize-none", readOnly: true, value: generateHTML() }), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex justify-between items-center mt-2" }, /* @__PURE__ */ import_react.default.createElement("button", { onClick: handleCopy }, "\u590D\u5236\u4EE3\u7801"), /* @__PURE__ */ import_react.default.createElement("span", { className: "text-green-800 font-bold" }, copyFeedback)))))))));
+  }
+  function ToolItem({ type, icon, label, onDragStart, desc }) {
+    return /* @__PURE__ */ import_react.default.createElement("div", { className: "tool-item group relative", draggable: true, onDragStart: (e) => onDragStart(e, type), title: desc }, /* @__PURE__ */ import_react.default.createElement("img", { src: icon, alt: "", style: { width: 16, height: 16 } }), /* @__PURE__ */ import_react.default.createElement("span", null, label));
+  }
+  function WidgetRenderer({ widget, isRunMode }) {
+    const { type, props } = widget;
+    const styleFull = { width: "100%", height: "100%" };
+    const interactiveProps = isRunMode ? {} : { readOnly: true };
+    switch (type) {
+      case "button":
+        return /* @__PURE__ */ import_react.default.createElement("button", { disabled: props.disabled, style: __spreadProps(__spreadValues({}, styleFull), { display: "flex", alignItems: "center", justifyContent: props.textAlign === "left" ? "flex-start" : props.textAlign === "right" ? "flex-end" : "center", gap: "4px", padding: "2px" }), onClick: () => isRunMode && console.log("Clicked") }, props.iconSrc && /* @__PURE__ */ import_react.default.createElement("img", { src: props.iconSrc, alt: "", style: { width: props.iconW, height: props.iconH } }), props.label);
+      case "text":
+        return /* @__PURE__ */ import_react.default.createElement("input", __spreadValues({ type: "text", placeholder: props.placeholder, defaultValue: props.value, style: styleFull }, interactiveProps));
+      case "textarea":
+        return /* @__PURE__ */ import_react.default.createElement("textarea", __spreadValues({ style: __spreadProps(__spreadValues({}, styleFull), { resize: "none" }), defaultValue: props.value }, interactiveProps));
+      case "checkbox":
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row h-full flex items-center" }, /* @__PURE__ */ import_react.default.createElement("input", __spreadValues({ type: "checkbox", defaultChecked: props.checked, disabled: props.disabled }, interactiveProps)), /* @__PURE__ */ import_react.default.createElement("label", null, props.label));
+      case "radio":
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "field-row h-full flex items-center" }, /* @__PURE__ */ import_react.default.createElement("input", __spreadValues({ type: "radio", name: isRunMode ? props.name : void 0, defaultChecked: props.checked }, interactiveProps)), /* @__PURE__ */ import_react.default.createElement("label", null, props.label));
+      case "dropdown":
+        return /* @__PURE__ */ import_react.default.createElement("select", __spreadValues({ style: styleFull }, interactiveProps), props.options.split(",").map((o, i) => /* @__PURE__ */ import_react.default.createElement("option", { key: i }, o)));
+      case "listbox":
+        return /* @__PURE__ */ import_react.default.createElement("select", __spreadValues({ size: "5", style: styleFull }, interactiveProps), props.options.split(",").map((o, i) => /* @__PURE__ */ import_react.default.createElement("option", { key: i }, o)));
+      case "slider":
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "flex items-center h-full w-full px-1" }, /* @__PURE__ */ import_react.default.createElement("input", __spreadValues({ type: "range", min: props.min, max: props.max, defaultValue: props.value, style: { width: "100%" } }, interactiveProps)));
+      case "progressbar":
+        const pct = props.value / props.max * 100;
+        return /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "100%", height: "100%", border: "1px solid white", boxShadow: "inset -1px -1px #fff, inset 1px 1px grey", background: "#c0c0c0", position: "relative" } }, /* @__PURE__ */ import_react.default.createElement("div", { style: { background: "navy", height: "100%", width: `${pct}%` } }));
+      case "image":
+        return /* @__PURE__ */ import_react.default.createElement("img", { src: props.src, alt: "", style: { width: "100%", height: "100%", objectFit: "cover", border: "2px inset white" } });
+      case "paragraph":
+        return /* @__PURE__ */ import_react.default.createElement("div", { style: __spreadProps(__spreadValues({}, styleFull), { overflow: "hidden", whiteSpace: "pre-wrap", display: "flex", alignItems: "center" }) }, props.text);
+      case "groupbox":
+        return /* @__PURE__ */ import_react.default.createElement("fieldset", { style: { width: "100%", height: "100%", margin: 0 } }, /* @__PURE__ */ import_react.default.createElement("legend", null, props.label));
+      case "tabs":
+        const tabs = props.tabs.split(",");
+        return /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "100%", height: "100%", display: "flex", flexDirection: "column" } }, /* @__PURE__ */ import_react.default.createElement("menu", { role: "tablist", style: { margin: 0 } }, tabs.map((t, i) => /* @__PURE__ */ import_react.default.createElement("li", { key: i, role: "tab", "aria-selected": i === 0 }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#t" }, t)))), /* @__PURE__ */ import_react.default.createElement("div", { className: "window", role: "tabpanel", style: { flex: 1, margin: 0 } }));
+      case "treeview":
+        return /* @__PURE__ */ import_react.default.createElement("ul", { className: "tree-view", style: { width: "100%", height: "100%", overflow: "hidden", background: "white", margin: 0 } }, props.data.split("\n").map((line, i) => /* @__PURE__ */ import_react.default.createElement("li", { key: i, style: { paddingLeft: line.search(/\S/) * 10 } }, line.trim())));
+      case "statusbar":
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "status-bar", style: { width: "100%", height: "100%" } }, /* @__PURE__ */ import_react.default.createElement("p", { className: "status-bar-field" }, props.text));
+      case "hscrollbar":
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "win-scrollbar", style: { width: "100%", height: "100%", flexDirection: "row", alignItems: "center" } }, /* @__PURE__ */ import_react.default.createElement("button", { className: "win-scrollbar-btn", style: { width: 16, height: "100%" } }, "\u25C4"), /* @__PURE__ */ import_react.default.createElement("div", { style: { flex: 1, height: "100%", position: "relative" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "win-thumb", style: { width: 20, height: "100%", left: 0 } })), /* @__PURE__ */ import_react.default.createElement("button", { className: "win-scrollbar-btn", style: { width: 16, height: "100%" } }, "\u25BA"));
+      case "vscrollbar":
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "win-scrollbar", style: { width: "100%", height: "100%", flexDirection: "column", alignItems: "center" } }, /* @__PURE__ */ import_react.default.createElement("button", { className: "win-scrollbar-btn", style: { width: "100%", height: 16 } }, "\u25B2"), /* @__PURE__ */ import_react.default.createElement("div", { style: { flex: 1, width: "100%", position: "relative" } }, /* @__PURE__ */ import_react.default.createElement("div", { className: "win-thumb", style: { height: 20, width: "100%", top: 0 } })), /* @__PURE__ */ import_react.default.createElement("button", { className: "win-scrollbar-btn", style: { width: "100%", height: 16 } }, "\u25BC"));
+      case "scrollbtn":
+        const arrow = props.direction === "up" ? "\u25B2" : props.direction === "down" ? "\u25BC" : props.direction === "left" ? "\u25C4" : "\u25BA";
+        return /* @__PURE__ */ import_react.default.createElement("button", { className: "win-scrollbar-btn", style: { width: "100%", height: "100%" } }, arrow);
+      default:
+        return /* @__PURE__ */ import_react.default.createElement("div", null, "?");
+    }
+  }
+  return __toCommonJS(stdin_exports);
+})();
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+
+                // Include the compiled error boundary code
+                var ErrorBoundaryModule = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __objRest = (source, exclude) => {
+    var target = {};
+    for (var prop in source)
+      if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+        target[prop] = source[prop];
+    if (source != null && __getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(source)) {
+        if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+          target[prop] = source[prop];
+      }
+    return target;
+  };
+  var __commonJS = (cb, mod) => function __require() {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+
+  // node_modules/react/cjs/react.development.js
+  var require_react_development = __commonJS({
+    "node_modules/react/cjs/react.development.js"(exports, module) {
+      "use strict";
+      (function() {
+        function defineDeprecationWarning(methodName, info) {
+          Object.defineProperty(Component.prototype, methodName, {
+            get: function() {
+              console.warn(
+                "%s(...) is deprecated in plain JavaScript React classes. %s",
+                info[0],
+                info[1]
+              );
+            }
+          });
+        }
+        function getIteratorFn(maybeIterable) {
+          if (null === maybeIterable || "object" !== typeof maybeIterable)
+            return null;
+          maybeIterable = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable["@@iterator"];
+          return "function" === typeof maybeIterable ? maybeIterable : null;
+        }
+        function warnNoop(publicInstance, callerName) {
+          publicInstance = (publicInstance = publicInstance.constructor) && (publicInstance.displayName || publicInstance.name) || "ReactClass";
+          var warningKey = publicInstance + "." + callerName;
+          didWarnStateUpdateForUnmountedComponent[warningKey] || (console.error(
+            "Can't call %s on a component that is not yet mounted. This is a no-op, but it might indicate a bug in your application. Instead, assign to `this.state` directly or define a `state = {};` class property with the desired state in the %s component.",
+            callerName,
+            publicInstance
+          ), didWarnStateUpdateForUnmountedComponent[warningKey] = true);
+        }
+        function Component(props, context, updater) {
+          this.props = props;
+          this.context = context;
+          this.refs = emptyObject;
+          this.updater = updater || ReactNoopUpdateQueue;
+        }
+        function ComponentDummy() {
+        }
+        function PureComponent(props, context, updater) {
+          this.props = props;
+          this.context = context;
+          this.refs = emptyObject;
+          this.updater = updater || ReactNoopUpdateQueue;
+        }
+        function testStringCoercion(value) {
+          return "" + value;
+        }
+        function checkKeyStringCoercion(value) {
+          try {
+            testStringCoercion(value);
+            var JSCompiler_inline_result = false;
+          } catch (e) {
+            JSCompiler_inline_result = true;
+          }
+          if (JSCompiler_inline_result) {
+            JSCompiler_inline_result = console;
+            var JSCompiler_temp_const = JSCompiler_inline_result.error;
+            var JSCompiler_inline_result$jscomp$0 = "function" === typeof Symbol && Symbol.toStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+            JSCompiler_temp_const.call(
+              JSCompiler_inline_result,
+              "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
+              JSCompiler_inline_result$jscomp$0
+            );
+            return testStringCoercion(value);
+          }
+        }
+        function getComponentNameFromType(type) {
+          if (null == type)
+            return null;
+          if ("function" === typeof type)
+            return type.$$typeof === REACT_CLIENT_REFERENCE ? null : type.displayName || type.name || null;
+          if ("string" === typeof type)
+            return type;
+          switch (type) {
+            case REACT_FRAGMENT_TYPE:
+              return "Fragment";
+            case REACT_PROFILER_TYPE:
+              return "Profiler";
+            case REACT_STRICT_MODE_TYPE:
+              return "StrictMode";
+            case REACT_SUSPENSE_TYPE:
+              return "Suspense";
+            case REACT_SUSPENSE_LIST_TYPE:
+              return "SuspenseList";
+            case REACT_ACTIVITY_TYPE:
+              return "Activity";
+          }
+          if ("object" === typeof type)
+            switch ("number" === typeof type.tag && console.error(
+              "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
+            ), type.$$typeof) {
+              case REACT_PORTAL_TYPE:
+                return "Portal";
+              case REACT_CONTEXT_TYPE:
+                return (type.displayName || "Context") + ".Provider";
+              case REACT_CONSUMER_TYPE:
+                return (type._context.displayName || "Context") + ".Consumer";
+              case REACT_FORWARD_REF_TYPE:
+                var innerType = type.render;
+                type = type.displayName;
+                type || (type = innerType.displayName || innerType.name || "", type = "" !== type ? "ForwardRef(" + type + ")" : "ForwardRef");
+                return type;
+              case REACT_MEMO_TYPE:
+                return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
+              case REACT_LAZY_TYPE:
+                innerType = type._payload;
+                type = type._init;
+                try {
+                  return getComponentNameFromType(type(innerType));
+                } catch (x) {
+                }
+            }
+          return null;
+        }
+        function getTaskName(type) {
+          if (type === REACT_FRAGMENT_TYPE)
+            return "<>";
+          if ("object" === typeof type && null !== type && type.$$typeof === REACT_LAZY_TYPE)
+            return "<...>";
+          try {
+            var name = getComponentNameFromType(type);
+            return name ? "<" + name + ">" : "<...>";
+          } catch (x) {
+            return "<...>";
+          }
+        }
+        function getOwner() {
+          var dispatcher = ReactSharedInternals.A;
+          return null === dispatcher ? null : dispatcher.getOwner();
+        }
+        function UnknownOwner() {
+          return Error("react-stack-top-frame");
+        }
+        function hasValidKey(config) {
+          if (hasOwnProperty.call(config, "key")) {
+            var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (getter && getter.isReactWarning)
+              return false;
+          }
+          return void 0 !== config.key;
+        }
+        function defineKeyPropWarningGetter(props, displayName) {
+          function warnAboutAccessingKey() {
+            specialPropKeyWarningShown || (specialPropKeyWarningShown = true, console.error(
+              "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
+              displayName
+            ));
+          }
+          warnAboutAccessingKey.isReactWarning = true;
+          Object.defineProperty(props, "key", {
+            get: warnAboutAccessingKey,
+            configurable: true
+          });
+        }
+        function elementRefGetterWithDeprecationWarning() {
+          var componentName = getComponentNameFromType(this.type);
+          didWarnAboutElementRef[componentName] || (didWarnAboutElementRef[componentName] = true, console.error(
+            "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+          ));
+          componentName = this.props.ref;
+          return void 0 !== componentName ? componentName : null;
+        }
+        function ReactElement(type, key, self, source, owner, props, debugStack, debugTask) {
+          self = props.ref;
+          type = {
+            $$typeof: REACT_ELEMENT_TYPE,
+            type,
+            key,
+            props,
+            _owner: owner
+          };
+          null !== (void 0 !== self ? self : null) ? Object.defineProperty(type, "ref", {
+            enumerable: false,
+            get: elementRefGetterWithDeprecationWarning
+          }) : Object.defineProperty(type, "ref", { enumerable: false, value: null });
+          type._store = {};
+          Object.defineProperty(type._store, "validated", {
+            configurable: false,
+            enumerable: false,
+            writable: true,
+            value: 0
+          });
+          Object.defineProperty(type, "_debugInfo", {
+            configurable: false,
+            enumerable: false,
+            writable: true,
+            value: null
+          });
+          Object.defineProperty(type, "_debugStack", {
+            configurable: false,
+            enumerable: false,
+            writable: true,
+            value: debugStack
+          });
+          Object.defineProperty(type, "_debugTask", {
+            configurable: false,
+            enumerable: false,
+            writable: true,
+            value: debugTask
+          });
+          Object.freeze && (Object.freeze(type.props), Object.freeze(type));
+          return type;
+        }
+        function cloneAndReplaceKey(oldElement, newKey) {
+          newKey = ReactElement(
+            oldElement.type,
+            newKey,
+            void 0,
+            void 0,
+            oldElement._owner,
+            oldElement.props,
+            oldElement._debugStack,
+            oldElement._debugTask
+          );
+          oldElement._store && (newKey._store.validated = oldElement._store.validated);
+          return newKey;
+        }
+        function isValidElement(object) {
+          return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
+        }
+        function escape(key) {
+          var escaperLookup = { "=": "=0", ":": "=2" };
+          return "$" + key.replace(/[=:]/g, function(match) {
+            return escaperLookup[match];
+          });
+        }
+        function getElementKey(element, index) {
+          return "object" === typeof element && null !== element && null != element.key ? (checkKeyStringCoercion(element.key), escape("" + element.key)) : index.toString(36);
+        }
+        function noop$1() {
+        }
+        function resolveThenable(thenable) {
+          switch (thenable.status) {
+            case "fulfilled":
+              return thenable.value;
+            case "rejected":
+              throw thenable.reason;
+            default:
+              switch ("string" === typeof thenable.status ? thenable.then(noop$1, noop$1) : (thenable.status = "pending", thenable.then(
+                function(fulfilledValue) {
+                  "pending" === thenable.status && (thenable.status = "fulfilled", thenable.value = fulfilledValue);
+                },
+                function(error) {
+                  "pending" === thenable.status && (thenable.status = "rejected", thenable.reason = error);
+                }
+              )), thenable.status) {
+                case "fulfilled":
+                  return thenable.value;
+                case "rejected":
+                  throw thenable.reason;
+              }
+          }
+          throw thenable;
+        }
+        function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
+          var type = typeof children;
+          if ("undefined" === type || "boolean" === type)
+            children = null;
+          var invokeCallback = false;
+          if (null === children)
+            invokeCallback = true;
+          else
+            switch (type) {
+              case "bigint":
+              case "string":
+              case "number":
+                invokeCallback = true;
+                break;
+              case "object":
+                switch (children.$$typeof) {
+                  case REACT_ELEMENT_TYPE:
+                  case REACT_PORTAL_TYPE:
+                    invokeCallback = true;
+                    break;
+                  case REACT_LAZY_TYPE:
+                    return invokeCallback = children._init, mapIntoArray(
+                      invokeCallback(children._payload),
+                      array,
+                      escapedPrefix,
+                      nameSoFar,
+                      callback
+                    );
+                }
+            }
+          if (invokeCallback) {
+            invokeCallback = children;
+            callback = callback(invokeCallback);
+            var childKey = "" === nameSoFar ? "." + getElementKey(invokeCallback, 0) : nameSoFar;
+            isArrayImpl(callback) ? (escapedPrefix = "", null != childKey && (escapedPrefix = childKey.replace(userProvidedKeyEscapeRegex, "$&/") + "/"), mapIntoArray(callback, array, escapedPrefix, "", function(c) {
+              return c;
+            })) : null != callback && (isValidElement(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(
+              callback,
+              escapedPrefix + (null == callback.key || invokeCallback && invokeCallback.key === callback.key ? "" : ("" + callback.key).replace(
+                userProvidedKeyEscapeRegex,
+                "$&/"
+              ) + "/") + childKey
+            ), "" !== nameSoFar && null != invokeCallback && isValidElement(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array.push(callback));
+            return 1;
+          }
+          invokeCallback = 0;
+          childKey = "" === nameSoFar ? "." : nameSoFar + ":";
+          if (isArrayImpl(children))
+            for (var i = 0; i < children.length; i++)
+              nameSoFar = children[i], type = childKey + getElementKey(nameSoFar, i), invokeCallback += mapIntoArray(
+                nameSoFar,
+                array,
+                escapedPrefix,
+                type,
+                callback
+              );
+          else if (i = getIteratorFn(children), "function" === typeof i)
+            for (i === children.entries && (didWarnAboutMaps || console.warn(
+              "Using Maps as children is not supported. Use an array of keyed ReactElements instead."
+            ), didWarnAboutMaps = true), children = i.call(children), i = 0; !(nameSoFar = children.next()).done; )
+              nameSoFar = nameSoFar.value, type = childKey + getElementKey(nameSoFar, i++), invokeCallback += mapIntoArray(
+                nameSoFar,
+                array,
+                escapedPrefix,
+                type,
+                callback
+              );
+          else if ("object" === type) {
+            if ("function" === typeof children.then)
+              return mapIntoArray(
+                resolveThenable(children),
+                array,
+                escapedPrefix,
+                nameSoFar,
+                callback
+              );
+            array = String(children);
+            throw Error(
+              "Objects are not valid as a React child (found: " + ("[object Object]" === array ? "object with keys {" + Object.keys(children).join(", ") + "}" : array) + "). If you meant to render a collection of children, use an array instead."
+            );
+          }
+          return invokeCallback;
+        }
+        function mapChildren(children, func, context) {
+          if (null == children)
+            return children;
+          var result = [], count = 0;
+          mapIntoArray(children, result, "", "", function(child) {
+            return func.call(context, child, count++);
+          });
+          return result;
+        }
+        function lazyInitializer(payload) {
+          if (-1 === payload._status) {
+            var ctor = payload._result;
+            ctor = ctor();
+            ctor.then(
+              function(moduleObject) {
+                if (0 === payload._status || -1 === payload._status)
+                  payload._status = 1, payload._result = moduleObject;
+              },
+              function(error) {
+                if (0 === payload._status || -1 === payload._status)
+                  payload._status = 2, payload._result = error;
+              }
+            );
+            -1 === payload._status && (payload._status = 0, payload._result = ctor);
+          }
+          if (1 === payload._status)
+            return ctor = payload._result, void 0 === ctor && console.error(
+              "lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))\n\nDid you accidentally put curly braces around the import?",
+              ctor
+            ), "default" in ctor || console.error(
+              "lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))",
+              ctor
+            ), ctor.default;
+          throw payload._result;
+        }
+        function resolveDispatcher() {
+          var dispatcher = ReactSharedInternals.H;
+          null === dispatcher && console.error(
+            "Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem."
+          );
+          return dispatcher;
+        }
+        function noop() {
+        }
+        function enqueueTask(task) {
+          if (null === enqueueTaskImpl)
+            try {
+              var requireString = ("require" + Math.random()).slice(0, 7);
+              enqueueTaskImpl = (module && module[requireString]).call(
+                module,
+                "timers"
+              ).setImmediate;
+            } catch (_err) {
+              enqueueTaskImpl = function(callback) {
+                false === didWarnAboutMessageChannel && (didWarnAboutMessageChannel = true, "undefined" === typeof MessageChannel && console.error(
+                  "This browser does not have a MessageChannel implementation, so enqueuing tasks via await act(async () => ...) will fail. Please file an issue at https://github.com/facebook/react/issues if you encounter this warning."
+                ));
+                var channel = new MessageChannel();
+                channel.port1.onmessage = callback;
+                channel.port2.postMessage(void 0);
+              };
+            }
+          return enqueueTaskImpl(task);
+        }
+        function aggregateErrors(errors) {
+          return 1 < errors.length && "function" === typeof AggregateError ? new AggregateError(errors) : errors[0];
+        }
+        function popActScope(prevActQueue, prevActScopeDepth) {
+          prevActScopeDepth !== actScopeDepth - 1 && console.error(
+            "You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. "
+          );
+          actScopeDepth = prevActScopeDepth;
+        }
+        function recursivelyFlushAsyncActWork(returnValue, resolve, reject) {
+          var queue = ReactSharedInternals.actQueue;
+          if (null !== queue)
+            if (0 !== queue.length)
+              try {
+                flushActQueue(queue);
+                enqueueTask(function() {
+                  return recursivelyFlushAsyncActWork(returnValue, resolve, reject);
+                });
+                return;
+              } catch (error) {
+                ReactSharedInternals.thrownErrors.push(error);
+              }
+            else
+              ReactSharedInternals.actQueue = null;
+          0 < ReactSharedInternals.thrownErrors.length ? (queue = aggregateErrors(ReactSharedInternals.thrownErrors), ReactSharedInternals.thrownErrors.length = 0, reject(queue)) : resolve(returnValue);
+        }
+        function flushActQueue(queue) {
+          if (!isFlushing) {
+            isFlushing = true;
+            var i = 0;
+            try {
+              for (; i < queue.length; i++) {
+                var callback = queue[i];
+                do {
+                  ReactSharedInternals.didUsePromise = false;
+                  var continuation = callback(false);
+                  if (null !== continuation) {
+                    if (ReactSharedInternals.didUsePromise) {
+                      queue[i] = callback;
+                      queue.splice(0, i);
+                      return;
+                    }
+                    callback = continuation;
+                  } else
+                    break;
+                } while (1);
+              }
+              queue.length = 0;
+            } catch (error) {
+              queue.splice(0, i + 1), ReactSharedInternals.thrownErrors.push(error);
+            } finally {
+              isFlushing = false;
+            }
+          }
+        }
+        "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
+        var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler");
+        Symbol.for("react.provider");
+        var REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, didWarnStateUpdateForUnmountedComponent = {}, ReactNoopUpdateQueue = {
+          isMounted: function() {
+            return false;
+          },
+          enqueueForceUpdate: function(publicInstance) {
+            warnNoop(publicInstance, "forceUpdate");
+          },
+          enqueueReplaceState: function(publicInstance) {
+            warnNoop(publicInstance, "replaceState");
+          },
+          enqueueSetState: function(publicInstance) {
+            warnNoop(publicInstance, "setState");
+          }
+        }, assign = Object.assign, emptyObject = {};
+        Object.freeze(emptyObject);
+        Component.prototype.isReactComponent = {};
+        Component.prototype.setState = function(partialState, callback) {
+          if ("object" !== typeof partialState && "function" !== typeof partialState && null != partialState)
+            throw Error(
+              "takes an object of state variables to update or a function which returns an object of state variables."
+            );
+          this.updater.enqueueSetState(this, partialState, callback, "setState");
+        };
+        Component.prototype.forceUpdate = function(callback) {
+          this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
+        };
+        var deprecatedAPIs = {
+          isMounted: [
+            "isMounted",
+            "Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks."
+          ],
+          replaceState: [
+            "replaceState",
+            "Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236)."
+          ]
+        }, fnName;
+        for (fnName in deprecatedAPIs)
+          deprecatedAPIs.hasOwnProperty(fnName) && defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
+        ComponentDummy.prototype = Component.prototype;
+        deprecatedAPIs = PureComponent.prototype = new ComponentDummy();
+        deprecatedAPIs.constructor = PureComponent;
+        assign(deprecatedAPIs, Component.prototype);
+        deprecatedAPIs.isPureReactComponent = true;
+        var isArrayImpl = Array.isArray, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = {
+          H: null,
+          A: null,
+          T: null,
+          S: null,
+          V: null,
+          actQueue: null,
+          isBatchingLegacy: false,
+          didScheduleLegacyUpdate: false,
+          didUsePromise: false,
+          thrownErrors: [],
+          getCurrentStack: null,
+          recentlyCreatedOwnerStacks: 0
+        }, hasOwnProperty = Object.prototype.hasOwnProperty, createTask = console.createTask ? console.createTask : function() {
+          return null;
+        };
+        deprecatedAPIs = {
+          "react-stack-bottom-frame": function(callStackForError) {
+            return callStackForError();
+          }
+        };
+        var specialPropKeyWarningShown, didWarnAboutOldJSXRuntime;
+        var didWarnAboutElementRef = {};
+        var unknownOwnerDebugStack = deprecatedAPIs["react-stack-bottom-frame"].bind(deprecatedAPIs, UnknownOwner)();
+        var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
+        var didWarnAboutMaps = false, userProvidedKeyEscapeRegex = /\/+/g, reportGlobalError = "function" === typeof reportError ? reportError : function(error) {
+          if ("object" === typeof window && "function" === typeof window.ErrorEvent) {
+            var event = new window.ErrorEvent("error", {
+              bubbles: true,
+              cancelable: true,
+              message: "object" === typeof error && null !== error && "string" === typeof error.message ? String(error.message) : String(error),
+              error
+            });
+            if (!window.dispatchEvent(event))
+              return;
+          } else if ("object" === typeof process && "function" === typeof process.emit) {
+            process.emit("uncaughtException", error);
+            return;
+          }
+          console.error(error);
+        }, didWarnAboutMessageChannel = false, enqueueTaskImpl = null, actScopeDepth = 0, didWarnNoAwaitAct = false, isFlushing = false, queueSeveralMicrotasks = "function" === typeof queueMicrotask ? function(callback) {
+          queueMicrotask(function() {
+            return queueMicrotask(callback);
+          });
+        } : enqueueTask;
+        deprecatedAPIs = Object.freeze({
+          __proto__: null,
+          c: function(size) {
+            return resolveDispatcher().useMemoCache(size);
+          }
+        });
+        exports.Children = {
+          map: mapChildren,
+          forEach: function(children, forEachFunc, forEachContext) {
+            mapChildren(
+              children,
+              function() {
+                forEachFunc.apply(this, arguments);
+              },
+              forEachContext
+            );
+          },
+          count: function(children) {
+            var n = 0;
+            mapChildren(children, function() {
+              n++;
+            });
+            return n;
+          },
+          toArray: function(children) {
+            return mapChildren(children, function(child) {
+              return child;
+            }) || [];
+          },
+          only: function(children) {
+            if (!isValidElement(children))
+              throw Error(
+                "React.Children.only expected to receive a single React element child."
+              );
+            return children;
+          }
+        };
+        exports.Component = Component;
+        exports.Fragment = REACT_FRAGMENT_TYPE;
+        exports.Profiler = REACT_PROFILER_TYPE;
+        exports.PureComponent = PureComponent;
+        exports.StrictMode = REACT_STRICT_MODE_TYPE;
+        exports.Suspense = REACT_SUSPENSE_TYPE;
+        exports.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = ReactSharedInternals;
+        exports.__COMPILER_RUNTIME = deprecatedAPIs;
+        exports.act = function(callback) {
+          var prevActQueue = ReactSharedInternals.actQueue, prevActScopeDepth = actScopeDepth;
+          actScopeDepth++;
+          var queue = ReactSharedInternals.actQueue = null !== prevActQueue ? prevActQueue : [], didAwaitActCall = false;
+          try {
+            var result = callback();
+          } catch (error) {
+            ReactSharedInternals.thrownErrors.push(error);
+          }
+          if (0 < ReactSharedInternals.thrownErrors.length)
+            throw popActScope(prevActQueue, prevActScopeDepth), callback = aggregateErrors(ReactSharedInternals.thrownErrors), ReactSharedInternals.thrownErrors.length = 0, callback;
+          if (null !== result && "object" === typeof result && "function" === typeof result.then) {
+            var thenable = result;
+            queueSeveralMicrotasks(function() {
+              didAwaitActCall || didWarnNoAwaitAct || (didWarnNoAwaitAct = true, console.error(
+                "You called act(async () => ...) without await. This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - await act(async () => ...);"
+              ));
+            });
+            return {
+              then: function(resolve, reject) {
+                didAwaitActCall = true;
+                thenable.then(
+                  function(returnValue) {
+                    popActScope(prevActQueue, prevActScopeDepth);
+                    if (0 === prevActScopeDepth) {
+                      try {
+                        flushActQueue(queue), enqueueTask(function() {
+                          return recursivelyFlushAsyncActWork(
+                            returnValue,
+                            resolve,
+                            reject
+                          );
+                        });
+                      } catch (error$0) {
+                        ReactSharedInternals.thrownErrors.push(error$0);
+                      }
+                      if (0 < ReactSharedInternals.thrownErrors.length) {
+                        var _thrownError = aggregateErrors(
+                          ReactSharedInternals.thrownErrors
+                        );
+                        ReactSharedInternals.thrownErrors.length = 0;
+                        reject(_thrownError);
+                      }
+                    } else
+                      resolve(returnValue);
+                  },
+                  function(error) {
+                    popActScope(prevActQueue, prevActScopeDepth);
+                    0 < ReactSharedInternals.thrownErrors.length ? (error = aggregateErrors(
+                      ReactSharedInternals.thrownErrors
+                    ), ReactSharedInternals.thrownErrors.length = 0, reject(error)) : reject(error);
+                  }
+                );
+              }
+            };
+          }
+          var returnValue$jscomp$0 = result;
+          popActScope(prevActQueue, prevActScopeDepth);
+          0 === prevActScopeDepth && (flushActQueue(queue), 0 !== queue.length && queueSeveralMicrotasks(function() {
+            didAwaitActCall || didWarnNoAwaitAct || (didWarnNoAwaitAct = true, console.error(
+              "A component suspended inside an `act` scope, but the `act` call was not awaited. When testing React components that depend on asynchronous data, you must await the result:\n\nawait act(() => ...)"
+            ));
+          }), ReactSharedInternals.actQueue = null);
+          if (0 < ReactSharedInternals.thrownErrors.length)
+            throw callback = aggregateErrors(ReactSharedInternals.thrownErrors), ReactSharedInternals.thrownErrors.length = 0, callback;
+          return {
+            then: function(resolve, reject) {
+              didAwaitActCall = true;
+              0 === prevActScopeDepth ? (ReactSharedInternals.actQueue = queue, enqueueTask(function() {
+                return recursivelyFlushAsyncActWork(
+                  returnValue$jscomp$0,
+                  resolve,
+                  reject
+                );
+              })) : resolve(returnValue$jscomp$0);
+            }
+          };
+        };
+        exports.cache = function(fn) {
+          return function() {
+            return fn.apply(null, arguments);
+          };
+        };
+        exports.captureOwnerStack = function() {
+          var getCurrentStack = ReactSharedInternals.getCurrentStack;
+          return null === getCurrentStack ? null : getCurrentStack();
+        };
+        exports.cloneElement = function(element, config, children) {
+          if (null === element || void 0 === element)
+            throw Error(
+              "The argument must be a React element, but you passed " + element + "."
+            );
+          var props = assign({}, element.props), key = element.key, owner = element._owner;
+          if (null != config) {
+            var JSCompiler_inline_result;
+            a: {
+              if (hasOwnProperty.call(config, "ref") && (JSCompiler_inline_result = Object.getOwnPropertyDescriptor(
+                config,
+                "ref"
+              ).get) && JSCompiler_inline_result.isReactWarning) {
+                JSCompiler_inline_result = false;
+                break a;
+              }
+              JSCompiler_inline_result = void 0 !== config.ref;
+            }
+            JSCompiler_inline_result && (owner = getOwner());
+            hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key);
+            for (propName in config)
+              !hasOwnProperty.call(config, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config.ref || (props[propName] = config[propName]);
+          }
+          var propName = arguments.length - 2;
+          if (1 === propName)
+            props.children = children;
+          else if (1 < propName) {
+            JSCompiler_inline_result = Array(propName);
+            for (var i = 0; i < propName; i++)
+              JSCompiler_inline_result[i] = arguments[i + 2];
+            props.children = JSCompiler_inline_result;
+          }
+          props = ReactElement(
+            element.type,
+            key,
+            void 0,
+            void 0,
+            owner,
+            props,
+            element._debugStack,
+            element._debugTask
+          );
+          for (key = 2; key < arguments.length; key++)
+            owner = arguments[key], isValidElement(owner) && owner._store && (owner._store.validated = 1);
+          return props;
+        };
+        exports.createContext = function(defaultValue) {
+          defaultValue = {
+            $$typeof: REACT_CONTEXT_TYPE,
+            _currentValue: defaultValue,
+            _currentValue2: defaultValue,
+            _threadCount: 0,
+            Provider: null,
+            Consumer: null
+          };
+          defaultValue.Provider = defaultValue;
+          defaultValue.Consumer = {
+            $$typeof: REACT_CONSUMER_TYPE,
+            _context: defaultValue
+          };
+          defaultValue._currentRenderer = null;
+          defaultValue._currentRenderer2 = null;
+          return defaultValue;
+        };
+        exports.createElement = function(type, config, children) {
+          for (var i = 2; i < arguments.length; i++) {
+            var node = arguments[i];
+            isValidElement(node) && node._store && (node._store.validated = 1);
+          }
+          i = {};
+          node = null;
+          if (null != config)
+            for (propName in didWarnAboutOldJSXRuntime || !("__self" in config) || "key" in config || (didWarnAboutOldJSXRuntime = true, console.warn(
+              "Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform"
+            )), hasValidKey(config) && (checkKeyStringCoercion(config.key), node = "" + config.key), config)
+              hasOwnProperty.call(config, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (i[propName] = config[propName]);
+          var childrenLength = arguments.length - 2;
+          if (1 === childrenLength)
+            i.children = children;
+          else if (1 < childrenLength) {
+            for (var childArray = Array(childrenLength), _i = 0; _i < childrenLength; _i++)
+              childArray[_i] = arguments[_i + 2];
+            Object.freeze && Object.freeze(childArray);
+            i.children = childArray;
+          }
+          if (type && type.defaultProps)
+            for (propName in childrenLength = type.defaultProps, childrenLength)
+              void 0 === i[propName] && (i[propName] = childrenLength[propName]);
+          node && defineKeyPropWarningGetter(
+            i,
+            "function" === typeof type ? type.displayName || type.name || "Unknown" : type
+          );
+          var propName = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
+          return ReactElement(
+            type,
+            node,
+            void 0,
+            void 0,
+            getOwner(),
+            i,
+            propName ? Error("react-stack-top-frame") : unknownOwnerDebugStack,
+            propName ? createTask(getTaskName(type)) : unknownOwnerDebugTask
+          );
+        };
+        exports.createRef = function() {
+          var refObject = { current: null };
+          Object.seal(refObject);
+          return refObject;
+        };
+        exports.forwardRef = function(render) {
+          null != render && render.$$typeof === REACT_MEMO_TYPE ? console.error(
+            "forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...))."
+          ) : "function" !== typeof render ? console.error(
+            "forwardRef requires a render function but was given %s.",
+            null === render ? "null" : typeof render
+          ) : 0 !== render.length && 2 !== render.length && console.error(
+            "forwardRef render functions accept exactly two parameters: props and ref. %s",
+            1 === render.length ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined."
+          );
+          null != render && null != render.defaultProps && console.error(
+            "forwardRef render functions do not support defaultProps. Did you accidentally pass a React component?"
+          );
+          var elementType = { $$typeof: REACT_FORWARD_REF_TYPE, render }, ownName;
+          Object.defineProperty(elementType, "displayName", {
+            enumerable: false,
+            configurable: true,
+            get: function() {
+              return ownName;
+            },
+            set: function(name) {
+              ownName = name;
+              render.name || render.displayName || (Object.defineProperty(render, "name", { value: name }), render.displayName = name);
+            }
+          });
+          return elementType;
+        };
+        exports.isValidElement = isValidElement;
+        exports.lazy = function(ctor) {
+          return {
+            $$typeof: REACT_LAZY_TYPE,
+            _payload: { _status: -1, _result: ctor },
+            _init: lazyInitializer
+          };
+        };
+        exports.memo = function(type, compare) {
+          null == type && console.error(
+            "memo: The first argument must be a component. Instead received: %s",
+            null === type ? "null" : typeof type
+          );
+          compare = {
+            $$typeof: REACT_MEMO_TYPE,
+            type,
+            compare: void 0 === compare ? null : compare
+          };
+          var ownName;
+          Object.defineProperty(compare, "displayName", {
+            enumerable: false,
+            configurable: true,
+            get: function() {
+              return ownName;
+            },
+            set: function(name) {
+              ownName = name;
+              type.name || type.displayName || (Object.defineProperty(type, "name", { value: name }), type.displayName = name);
+            }
+          });
+          return compare;
+        };
+        exports.startTransition = function(scope) {
+          var prevTransition = ReactSharedInternals.T, currentTransition = {};
+          ReactSharedInternals.T = currentTransition;
+          currentTransition._updatedFibers = /* @__PURE__ */ new Set();
+          try {
+            var returnValue = scope(), onStartTransitionFinish = ReactSharedInternals.S;
+            null !== onStartTransitionFinish && onStartTransitionFinish(currentTransition, returnValue);
+            "object" === typeof returnValue && null !== returnValue && "function" === typeof returnValue.then && returnValue.then(noop, reportGlobalError);
+          } catch (error) {
+            reportGlobalError(error);
+          } finally {
+            null === prevTransition && currentTransition._updatedFibers && (scope = currentTransition._updatedFibers.size, currentTransition._updatedFibers.clear(), 10 < scope && console.warn(
+              "Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table."
+            )), ReactSharedInternals.T = prevTransition;
+          }
+        };
+        exports.unstable_useCacheRefresh = function() {
+          return resolveDispatcher().useCacheRefresh();
+        };
+        exports.use = function(usable) {
+          return resolveDispatcher().use(usable);
+        };
+        exports.useActionState = function(action, initialState, permalink) {
+          return resolveDispatcher().useActionState(
+            action,
+            initialState,
+            permalink
+          );
+        };
+        exports.useCallback = function(callback, deps) {
+          return resolveDispatcher().useCallback(callback, deps);
+        };
+        exports.useContext = function(Context) {
+          var dispatcher = resolveDispatcher();
+          Context.$$typeof === REACT_CONSUMER_TYPE && console.error(
+            "Calling useContext(Context.Consumer) is not supported and will cause bugs. Did you mean to call useContext(Context) instead?"
+          );
+          return dispatcher.useContext(Context);
+        };
+        exports.useDebugValue = function(value, formatterFn) {
+          return resolveDispatcher().useDebugValue(value, formatterFn);
+        };
+        exports.useDeferredValue = function(value, initialValue) {
+          return resolveDispatcher().useDeferredValue(value, initialValue);
+        };
+        exports.useEffect = function(create, createDeps, update) {
+          null == create && console.warn(
+            "React Hook useEffect requires an effect callback. Did you forget to pass a callback to the hook?"
+          );
+          var dispatcher = resolveDispatcher();
+          if ("function" === typeof update)
+            throw Error(
+              "useEffect CRUD overload is not enabled in this build of React."
+            );
+          return dispatcher.useEffect(create, createDeps);
+        };
+        exports.useId = function() {
+          return resolveDispatcher().useId();
+        };
+        exports.useImperativeHandle = function(ref, create, deps) {
+          return resolveDispatcher().useImperativeHandle(ref, create, deps);
+        };
+        exports.useInsertionEffect = function(create, deps) {
+          null == create && console.warn(
+            "React Hook useInsertionEffect requires an effect callback. Did you forget to pass a callback to the hook?"
+          );
+          return resolveDispatcher().useInsertionEffect(create, deps);
+        };
+        exports.useLayoutEffect = function(create, deps) {
+          null == create && console.warn(
+            "React Hook useLayoutEffect requires an effect callback. Did you forget to pass a callback to the hook?"
+          );
+          return resolveDispatcher().useLayoutEffect(create, deps);
+        };
+        exports.useMemo = function(create, deps) {
+          return resolveDispatcher().useMemo(create, deps);
+        };
+        exports.useOptimistic = function(passthrough, reducer) {
+          return resolveDispatcher().useOptimistic(passthrough, reducer);
+        };
+        exports.useReducer = function(reducer, initialArg, init) {
+          return resolveDispatcher().useReducer(reducer, initialArg, init);
+        };
+        exports.useRef = function(initialValue) {
+          return resolveDispatcher().useRef(initialValue);
+        };
+        exports.useState = function(initialState) {
+          return resolveDispatcher().useState(initialState);
+        };
+        exports.useSyncExternalStore = function(subscribe, getSnapshot, getServerSnapshot) {
+          return resolveDispatcher().useSyncExternalStore(
+            subscribe,
+            getSnapshot,
+            getServerSnapshot
+          );
+        };
+        exports.useTransition = function() {
+          return resolveDispatcher().useTransition();
+        };
+        exports.version = "19.1.0";
+        "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
+      })();
+    }
+  });
+
+  // node_modules/react/index.js
+  var require_react = __commonJS({
+    "node_modules/react/index.js"(exports, module) {
+      "use strict";
+      if (false) {
+        module.exports = null;
+      } else {
+        module.exports = require_react_development();
+      }
+    }
+  });
+
+  // <stdin>
+  var require_stdin = __commonJS({
+    "<stdin>"(exports, module) {
+      var React = require_react();
+      function createErrorBoundary() {
+        return class ErrorBoundary extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              hasError: false,
+              error: null,
+              errorInfo: null,
+              isCopied: false,
+              isMinimized: false,
+              isFullWidth: true,
+              copyButtonState: "default"
+            };
+            this.copyErrorToClipboard = this.copyErrorToClipboard.bind(this);
+            this.toggleMinimize = this.toggleMinimize.bind(this);
+            this.toggleFullWidth = this.toggleFullWidth.bind(this);
+          }
+          static getDerivedStateFromError(error) {
+            return {
+              hasError: true,
+              error,
+              errorInfo: null,
+              isCopied: false,
+              isMinimized: false,
+              // Start expanded when error occurs
+              isFullWidth: false,
+              copyButtonState: "default"
+            };
+          }
+          componentDidCatch(error, errorInfo) {
+            this.setState({
+              error,
+              errorInfo
+            });
+            console.error("Error caught by ErrorBoundary:", error, errorInfo);
+          }
+          copyErrorToClipboard() {
+            if (this.state.error) {
+              const errorText = `Error: ${this.state.error.toString()}
+
+Component Stack:
+${this.state.errorInfo ? this.state.errorInfo.componentStack : "Not available"}`;
+              const fallbackCopyTextToClipboard = (text) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.top = "0";
+                textArea.style.left = "0";
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                  const successful = document.execCommand("copy");
+                  const msg = successful ? "Text copied to clipboard" : "Failed to copy text";
+                  console.log(msg);
+                  this.setState({
+                    isCopied: successful,
+                    copyButtonState: successful ? "copied" : "default"
+                  });
+                  if (successful) {
+                    setTimeout(() => {
+                      this.setState({
+                        isCopied: false,
+                        copyButtonState: "default"
+                      });
+                    }, 2e3);
+                  }
+                } catch (err) {
+                  console.error("Fallback: Failed to copy text: ", err);
+                } finally {
+                  document.body.removeChild(textArea);
+                }
+              };
+              if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(errorText);
+                return;
+              }
+              navigator.clipboard.writeText(errorText).then(() => {
+                this.setState({
+                  isCopied: true,
+                  copyButtonState: "copied"
+                });
+                setTimeout(() => {
+                  this.setState({
+                    isCopied: false,
+                    copyButtonState: "default"
+                  });
+                }, 2e3);
+              }).catch((err) => {
+                console.error("Failed to copy error details:", err);
+                fallbackCopyTextToClipboard(errorText);
+              });
+            }
+          }
+          toggleMinimize() {
+            this.setState((prevState) => ({
+              isMinimized: !prevState.isMinimized,
+              // If minimizing, ensure it's not full width
+              isFullWidth: prevState.isMinimized ? prevState.isFullWidth : false
+            }));
+          }
+          toggleFullWidth() {
+            if (!this.state.isMinimized) {
+              this.setState((prevState) => ({
+                isFullWidth: !prevState.isFullWidth
+              }));
+            }
+          }
+          render() {
+            if (this.state.hasError) {
+              const { isMinimized, isFullWidth, isCopied, error, errorInfo } = this.state;
+              const AlertTriangleIcon = (_a) => {
+                var _b = _a, { className } = _b, otherProps = __objRest(_b, ["className"]);
+                return /* @__PURE__ */ React.createElement(
+                  "svg",
+                  __spreadValues({
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: isMinimized ? "16" : "20",
+                    height: isMinimized ? "16" : "20",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    className: className || "text-red-500 dark:text-red-400"
+                  }, otherProps),
+                  /* @__PURE__ */ React.createElement("path", { d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" }),
+                  /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "9", x2: "12", y2: "13" }),
+                  /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "17", x2: "12.01", y2: "17" })
+                );
+              };
+              const CopyIcon = () => /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("rect", { x: "9", y: "9", width: "13", height: "13", rx: "2", ry: "2" }),
+                /* @__PURE__ */ React.createElement("path", { d: "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" })
+              );
+              const MinimizeIcon = () => /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("line", { x1: "5", y1: "12", x2: "19", y2: "12" })
+              );
+              const ExpandIcon = () => /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("polyline", { points: "15 3 21 3 21 9" }),
+                /* @__PURE__ */ React.createElement("polyline", { points: "9 21 3 21 3 15" }),
+                /* @__PURE__ */ React.createElement("line", { x1: "21", y1: "3", x2: "14", y2: "10" }),
+                /* @__PURE__ */ React.createElement("line", { x1: "3", y1: "21", x2: "10", y2: "14" })
+              );
+              const CompressIcon = () => /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("polyline", { points: "4 14 10 14 10 20" }),
+                /* @__PURE__ */ React.createElement("polyline", { points: "20 10 14 10 14 4" }),
+                /* @__PURE__ */ React.createElement("line", { x1: "14", y1: "10", x2: "21", y2: "3" }),
+                /* @__PURE__ */ React.createElement("line", { x1: "3", y1: "21", x2: "10", y2: "14" })
+              );
+              const RefreshIcon = () => /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("path", { d: "M23 4v6h-6" }),
+                /* @__PURE__ */ React.createElement("path", { d: "M1 20v-6h6" }),
+                /* @__PURE__ */ React.createElement("path", { d: "M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" })
+              );
+              const CheckIcon = () => /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: "14",
+                  height: "14",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("path", { d: "M20 6L9 17l-5-5" })
+              );
+              if (isMinimized) {
+                return /* @__PURE__ */ React.createElement(React.Fragment, null, this.props.children, /* @__PURE__ */ React.createElement(
+                  "div",
+                  {
+                    className: "fixed bottom-4 right-4 z-[9999]",
+                    onClick: this.toggleMinimize
+                  },
+                  /* @__PURE__ */ React.createElement("div", { className: "group flex items-center justify-center w-10 h-10 rounded-full bg-red-500 shadow-lg cursor-pointer hover:bg-red-600 transition-colors dark:bg-red-700 dark:hover:bg-red-600" }, /* @__PURE__ */ React.createElement(AlertTriangleIcon, { className: "text-white dark:text-gray-100" }), /* @__PURE__ */ React.createElement("div", { className: "absolute right-12 bottom-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-gray-800 text-white text-xs rounded py-1 px-2 whitespace-nowrap dark:bg-gray-900 shadow-md" }, "Error - Click to expand"))
+                ));
+              }
+              const baseContainerClasses = "fixed bottom-0 z-[9999] transition-all duration-300 ease-in-out mb-8";
+              const innerBoxBaseClasses = "relative overflow-hidden rounded-lg border border-red-300 bg-white shadow-xl dark:border-red-700 dark:bg-gray-950";
+              const positionAndWidthClass = isFullWidth ? "inset-x-0 w-full" : "right-4 w-[32rem] max-w-[90vw]";
+              const paddingClass = isFullWidth ? "p-4" : "";
+              return /* @__PURE__ */ React.createElement(React.Fragment, null, this.props.children, /* @__PURE__ */ React.createElement("div", { className: `${baseContainerClasses} ${positionAndWidthClass} ${paddingClass}` }, /* @__PURE__ */ React.createElement(
+                "div",
+                {
+                  className: `${innerBoxBaseClasses} ${isFullWidth ? "mx-auto" : ""}`,
+                  style: isFullWidth ? { maxWidth: "100%" } : {}
+                },
+                /* @__PURE__ */ React.createElement("div", { className: "flex items-center justify-between bg-gradient-to-r from-red-100 to-red-200 px-3 py-2 dark:from-red-950/50 dark:to-red-900/50" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement(AlertTriangleIcon, { className: "text-red-500 dark:text-red-400" }), /* @__PURE__ */ React.createElement("h3", { className: "text-sm font-semibold text-red-800 dark:text-red-300" }, "Sorry, something went wrong")), /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-1" }, /* @__PURE__ */ React.createElement(
+                  "button",
+                  {
+                    onClick: () => window.location.reload(),
+                    className: "rounded p-1 text-gray-600 hover:bg-red-200/50 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-red-800/50 dark:hover:text-gray-200 transition-colors",
+                    title: "Refresh page"
+                  },
+                  /* @__PURE__ */ React.createElement(RefreshIcon, null)
+                ), /* @__PURE__ */ React.createElement(
+                  "button",
+                  {
+                    onClick: this.toggleFullWidth,
+                    className: "rounded p-1 text-gray-600 hover:bg-red-200/50 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-red-800/50 dark:hover:text-gray-200 transition-colors",
+                    title: isFullWidth ? "Reduce width" : "Expand to full width"
+                  },
+                  isFullWidth ? /* @__PURE__ */ React.createElement(CompressIcon, null) : /* @__PURE__ */ React.createElement(ExpandIcon, null)
+                ), /* @__PURE__ */ React.createElement(
+                  "button",
+                  {
+                    onClick: this.toggleMinimize,
+                    className: "rounded p-1 text-gray-600 hover:bg-red-200/50 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-red-800/50 dark:hover:text-gray-200 transition-colors",
+                    title: "Minimize"
+                  },
+                  /* @__PURE__ */ React.createElement(MinimizeIcon, null)
+                ))),
+                /* @__PURE__ */ React.createElement("div", { className: "p-4" }, /* @__PURE__ */ React.createElement("div", { className: "mb-3" }, /* @__PURE__ */ React.createElement("p", { className: "text-sm text-gray-700 dark:text-gray-300" }, "You can copy the error details and ask Gemini to fix the error.")), /* @__PURE__ */ React.createElement(
+                  "div",
+                  {
+                    className: `overflow-auto rounded bg-gray-50 p-3 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 scrollbar-none ${isFullWidth ? "max-h-[40vh]" : "max-h-60"}`
+                  },
+                  /* @__PURE__ */ React.createElement("div", { className: "space-y-3" }, /* @__PURE__ */ React.createElement("div", { className: "space-y-1" }, /* @__PURE__ */ React.createElement("h4", { className: "text-xs uppercase font-semibold text-gray-500 dark:text-gray-400" }, "Error Message:"), /* @__PURE__ */ React.createElement("p", { className: "font-mono text-xs text-red-700 dark:text-red-400 break-words px-2 py-1.5 bg-red-50 dark:bg-red-900/30 rounded border border-red-100 dark:border-red-900/50" }, error ? error.toString() : "No error message available.")), errorInfo && /* @__PURE__ */ React.createElement("div", { className: "space-y-1" }, /* @__PURE__ */ React.createElement("h4", { className: "text-xs uppercase font-semibold text-gray-500 dark:text-gray-400" }, "Component Stack:"), /* @__PURE__ */ React.createElement("pre", { className: "whitespace-pre-wrap font-mono text-xs text-gray-700 dark:text-gray-300 px-2 py-1.5 bg-gray-100 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700" }, errorInfo.componentStack)))
+                ), /* @__PURE__ */ React.createElement("div", { className: "mt-4" }, /* @__PURE__ */ React.createElement(
+                  "button",
+                  {
+                    onClick: this.copyErrorToClipboard,
+                    className: `flex items-center justify-center gap-2 px-4 py-2 text-white rounded-md transition-colors w-full ${this.state.copyButtonState === "copied" ? "bg-blue-600 hover:bg-blue-700" : "bg-indigo-600 hover:bg-indigo-700"}`
+                  },
+                  this.state.copyButtonState === "copied" ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(CheckIcon, null), "Copied to Clipboard!") : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(CopyIcon, null), "Copy Error Details")
+                )))
+              )));
+            }
+            return this.props.children;
+          }
+        };
+      }
+      module.exports = { createErrorBoundary };
+    }
+  });
+  return require_stdin();
+})();
+/*! Bundled license information:
+
+react/cjs/react.development.js:
+  (**
+   * @license React
+   * react.development.js
+   *
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+*/
+
+
+                // Use the exported createErrorBoundary function
+                const ErrorBoundary = ErrorBoundaryModule.createErrorBoundary();
+
+                const AppComponent = React.createElement(
+                    ErrorBoundary,
+                    null,
+                    React.createElement(App.default, null)
+                );
+                root.render(AppComponent);
+            });
+        </script>
+    
+
+</body>
